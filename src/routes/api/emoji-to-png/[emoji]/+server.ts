@@ -3,7 +3,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 
 // Helper function to draw emoji on canvas and return it as PNG buffer
 const generateEmojiPng = (emoji: string): Buffer => {
-	const canvas = createCanvas(128, 128);
+	const canvas = createCanvas(256, 256);
 	const context = canvas.getContext('2d');
 
 	// Set the font size and draw the emoji
