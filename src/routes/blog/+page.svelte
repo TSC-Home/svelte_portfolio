@@ -8,7 +8,7 @@
 	let projects = [
 		{
 			title: 'Basics of LLM',
-			description: 'How works a Language Model?',
+			description: 'How does a language model work?',
 			info: 'A little blog post about the basics of a Language Model.',
 			name: 'basics-of-llm',
 			icon: 'grain',
@@ -34,7 +34,7 @@
 		},
 		{
 			title: 'Privacy',
-			description: 'Why privacy is important?',
+			description: 'Why is privacy important?',
 			info: 'A little blog post about why privacy is important. And how you can protect your privacy.',
 			name: 'privacy',
 			icon: 'privacy_tip',
