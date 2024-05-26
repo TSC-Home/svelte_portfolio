@@ -77,5 +77,15 @@ export async function GET() {
 			preview: response.item.preview_url
 		};
 		return json(song);
-	} catch (error) {}
+	} catch (error) {
+		return json({
+			title: 'Currently not listening to music',
+			currentlyPlaying: false,
+			time: {
+				progress: 0,
+				duration: 0,
+				remaining: 0
+			}
+		});
+	}
 }
