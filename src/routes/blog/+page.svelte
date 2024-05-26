@@ -1,5 +1,5 @@
 <script lang="ts">
-	import HeaderProjects from './../../lib/headerProjects.svelte';
+	import HeaderBlog from './../../lib/headerBlog.svelte';
 	import Footer from '$lib/home/footer.svelte';
 	import Card from '$lib/projects/Card.svelte';
 
@@ -7,38 +7,17 @@
 
 	let projects = [
 		{
-			title: 'Robot DNA',
-			description: 'The Future of X-Track Mobility',
-			info: 'A Website created for a company that specializes in the development of autonomous vehicles. Built with SvelteKit and TailwindCSS.',
-			name: 'robot-dna-com',
-			icon: 'captive_portal',
+			title: 'Basics of LLM',
+			description: 'How works a Language Model?',
+			info: 'A little blog post about the basics of a Language Model.',
+			name: 'basics-of-llm',
+			icon: 'grain',
 			my: false,
-			status: 'Completed',
-			link: 'https://robot-dna.com',
-			direct_redirect: false
-		},
-		{
-			title: 'Notequals',
-			description: 'A simple and fast automation builder app.',
-			info: 'A simple and fast automation builder app. Built with SvelteKit, TailwindCSS, and a in dun written backend.',
-			name: 'notequals-net',
-			icon: 'captive_portal',
-			my: false,
-			status: 'Working',
+			status: 'Artificial Intelligence',
+			linkname: '',
 			link: '',
-			direct_redirect: false
-		},
-		{
-			title: 'Blog',
-			description: 'My blog is a platform for me to share my interests.',
-			info: 'My blog is a platform for me to share my interests and thoughts on various topics. I hope you will find something of interest on my blog.',
-			name: 'blog',
-			icon: 'description',
-			my: true,
-			status: 'Working',
-			link: '/blog',
-			linkname: 'Blog',
-			direct_redirect: false
+			direct_redirect: false,
+			readmore: true
 		},
 		{
 			title: 'Person detection model',
@@ -54,22 +33,36 @@
 			readmore: true
 		},
 		{
-			title: 'TSC-Home',
-			description: 'My Github Profile',
-			info: 'My Github Profile. I hope you will find something of interest on my Github Profile.',
-			name: 'tsc-home',
-			icon: 'description',
-			my: true,
-			status: 'Github',
-			link: 'https://github.com/tsc-home',
-			linkname: 'Github',
-			direct_redirect: true
+			title: 'Privacy',
+			description: 'Why privacy is important?',
+			info: 'A little blog post about why privacy is important. And how you can protect your privacy.',
+			name: 'privacy',
+			icon: 'privacy_tip',
+			my: false,
+			status: 'Privacy',
+			link: '',
+			linkname: 'Privacy',
+			direct_redirect: false,
+			readmore: true
+		},
+		{
+			title: 'How to code Green?',
+			description: 'How to programme more sustainably.',
+			info: 'A little blog post about how to programme more sustainably. And how you can reduce your carbon footprint.',
+			name: 'how-to-code-green',
+			icon: 'eco',
+			my: false,
+			status: 'Sustainability',
+			link: '',
+			linkname: 'Sustainability',
+			direct_redirect: false,
+			readmore: true
 		}
 	];
 </script>
 
 <svelte:head>
-	<title>Portfolio | ZERO</title>
+	<title>Blog | ZERO</title>
 	<meta
 		name="description"
 		content="ZERO is a backend developer and AI engineer with a passion for building scalable and efficient web applications and artificial intelligence. synthetix.me"
@@ -84,18 +77,18 @@
 	<meta name="theme-color" content="#ffffff" />
 </svelte:head>
 <div class="flex min-h-[100dvh] flex-col">
-	<HeaderProjects {data} />
+	<HeaderBlog {data} />
 	<main class="flex-1">
 		<section id="more" class=" flex w-full justify-center bg-gray-100 py-12 md:py-24 lg:py-32">
 			<div class="container px-4 md:px-6">
 				<div class="flex flex-col items-center justify-center space-y-4 text-center">
 					<div class="space-y-2">
-						<h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Portfolio</h2>
+						<h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Blog</h2>
 						<p
 							class="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
 						>
-							Hello there!👋 I've put together a little collection of my work that I'm happy to
-							share with you. I hope you enjoy it!
+							Welcome to my blog. Here you will find a collection of my thoughts and experiences on
+							various topics. I hope you will find something of interest here. Enjoy!🚀
 						</p>
 					</div>
 				</div>
