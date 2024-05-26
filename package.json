@@ -41,6 +41,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@splinetool/runtime": "^1.4.0",
+		"canvas": "^2.11.2",
+		"emoji-datasource-apple": "^15.1.2",
 		"svelte-tailwind-cookieconsent": "^0.0.15"
 	}
 }
