@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { invalidateAll } from '$app/navigation';
+	import { page } from '$app/stores';
 
 	export let data;
 	let elapsed = data.spotify.time.progress;
@@ -30,8 +31,8 @@
 <header
 	class="fixed z-10 flex h-16 w-full items-center justify-between border bg-white px-4 lg:px-6"
 >
-	<div class="flex">
-		<a class="flex items-center justify-center" href="/">
+	<div class="flex w-full md:justify-start">
+		<a class=" hidden items-center justify-center md:flex" href="/">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="24"
@@ -50,11 +51,44 @@
 
 			<span class="sr-only">ZERO</span>
 		</a>
+		{#if $page.route.id === '/'}
+			<a class="flex items-center justify-center md:hidden" href="/">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="h-6 w-6"
+				>
+					<polyline points="16 18 22 12 16 6"></polyline>
+					<polyline points="8 6 2 12 8 18"></polyline>
+				</svg>
+
+				<span class="sr-only">ZERO</span>
+			</a>
+		{:else}
+			<button
+				on:click={() => history.back()}
+				class=" animate-fadeIn animate-delay-[1000ms] flex items-center justify-center md:hidden"
+			>
+				<p
+					class="icon animate-slideInUp animate-delay-[950ms] h-10 w-10 rounded-full bg-neutral-100 p-2"
+				>
+					arrow_back
+				</p>
+			</button>
+		{/if}
+
 		<section
 			title={data.spotify.currentlyPlaying
 				? `Listen to ${data.spotify.title} by ${data.spotify.artist[0].name}`
 				: 'Currently not listening to music'}
-			class="animate-fadeIn animate-delay-[1000ms] ml-2 mt-0.5 max-w-[500px] items-center truncate rounded-lg bg-gray-100 p-3"
+			class="animate-fadeIn animate-delay-[1000ms] ml-2 mt-0.5 w-full items-center truncate rounded-lg bg-gray-100 p-3 md:max-w-[300px]"
 		>
 			<div class="animate-slideInUp animate-delay-[950ms] flex">
 				<div class="flex">
@@ -89,18 +123,46 @@
 			</div>
 		</section>
 	</div>
-	<div>
-		<nav class="ml-auto flex gap-4 sm:gap-6">
-			<a class="text-sm font-medium underline-offset-4 hover:underline" href="#projects">
-				Projects
-			</a>
-			<a class="text-sm font-medium underline-offset-4 hover:underline" href="#skills"> Skills </a>
-			<a
-				class="text-sm font-medium underline-offset-4 hover:underline"
-				href="mailto:hello@synthetix.me"
-			>
-				Contact
-			</a>
-		</nav>
+	<div class="hidden md:flex lg:flex">
+		{#if $page.route.id === '/'}
+			<nav class="ml-auto flex gap-4 sm:gap-6">
+				<a class="text-sm font-medium underline-offset-4 hover:underline" href="#projects">
+					Projects
+				</a>
+				<a class="text-sm font-medium underline-offset-4 hover:underline" href="#skills">
+					Skills
+				</a>
+				<a
+					class="text-sm font-medium underline-offset-4 hover:underline"
+					href="mailto:hello@synthetix.me"
+				>
+					Contact
+				</a>
+			</nav>
+		{:else if $page.route.id === '/projects'}
+			<nav class="ml-auto flex gap-4 sm:gap-6">
+				<a class="text-sm font-medium underline-offset-4 hover:underline" href="/"> Home </a>
+				<a class="text-sm font-medium underline-offset-4 hover:underline" href="/blog"> Blog </a>
+				<a
+					class="text-sm font-medium underline-offset-4 hover:underline"
+					href="mailto:hello@synthetix.me"
+				>
+					Contact
+				</a>
+			</nav>
+		{:else if $page.route.id === '/blog'}
+			<nav class="ml-auto flex gap-4 sm:gap-6">
+				<a class="text-sm font-medium underline-offset-4 hover:underline" href="/"> Home </a>
+				<a class="text-sm font-medium underline-offset-4 hover:underline" href="/projects">
+					Portfolio
+				</a>
+				<a
+					class="text-sm font-medium underline-offset-4 hover:underline"
+					href="mailto:hello@synthetix.me"
+				>
+					Contact
+				</a>
+			</nav>
+		{/if}
 	</div>
 </header>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import HeaderBlog from './../../lib/headerBlog.svelte';
+	import Header from '$lib/header.svelte';
 	import Footer from '$lib/home/footer.svelte';
 	import Card from '$lib/projects/Card.svelte';
 
@@ -77,9 +77,9 @@
 	<meta name="theme-color" content="#ffffff" />
 </svelte:head>
 <div class="flex min-h-[100dvh] flex-col">
-	<HeaderBlog {data} />
+	<Header {data} />
 	<main class="flex-1">
-		<section id="more" class=" flex w-full justify-center bg-gray-100 py-12 md:py-24 lg:py-32">
+		<section id="more" class=" flex w-full justify-center bg-gray-100 py-24 md:py-24 lg:py-32">
 			<div class="container px-4 md:px-6">
 				<div class="flex flex-col items-center justify-center space-y-4 text-center">
 					<div class="space-y-2">

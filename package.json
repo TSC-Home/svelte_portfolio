@@ -43,8 +43,8 @@
 	"dependencies": {
 		"@splinetool/runtime": "^1.4.0",
 		"axios": "^1.7.2",
+		"bits-ui": "^0.21.10",
 		"canvas": "^2.11.2",
-		"emoji-datasource-apple": "^15.1.2",
-		"svelte-tailwind-cookieconsent": "^0.0.15"
+		"emoji-datasource-apple": "^15.1.2"
 	}
 }
