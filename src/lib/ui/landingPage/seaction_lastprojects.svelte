@@ -2,7 +2,6 @@
 	import type { Post } from '$lib/types';
 	import ErrorCard from '../error_card.svelte';
 	export let projects: Post[];
-	console.log(projects);
 </script>
 
 <section id="projects" class=" flex w-full justify-center bg-gray-100 py-12 md:py-24 lg:py-32">

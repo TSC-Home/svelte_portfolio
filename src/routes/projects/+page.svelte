@@ -5,8 +5,6 @@
 	import ErrorCard from '$lib/ui/error_card.svelte';
 
 	export let data;
-
-	console.log(data.projects);
 </script>
 
 <svelte:head>

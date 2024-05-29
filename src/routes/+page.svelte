@@ -7,7 +7,6 @@
 	import Lastprojects from '$lib/ui/landingPage/seaction_lastprojects.svelte';
 
 	export let data;
-	console.log(data);
 </script>
 
 <svelte:head>
