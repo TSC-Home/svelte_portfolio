@@ -1,4 +1,4 @@
-export const prerender = true;
+export const prerender = false;
 export const load = async ({ fetch, url }) => {
 	try {
 		const response = await fetch('/api/spotify');
