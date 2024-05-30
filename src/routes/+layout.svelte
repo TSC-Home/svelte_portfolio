@@ -1,7 +1,10 @@
 <script>
 	import '../app.css';
+	export let data;
 </script>
 
-<slot></slot>
-
-<style></style>
+{#key data.url}
+	<div>
+		<slot />
+	</div>
+{/key}
