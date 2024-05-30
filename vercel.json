@@ -1,0 +1,14 @@
+{
+	"redirects": [
+		{
+			"source": "/twitter",
+			"destination": "https://discord.gg/test",
+			"permanent": true
+		},
+		{
+			"source": "/github",
+			"destination": "https://github.com/tsc-home",
+			"permanent": true
+		}
+	]
+}
