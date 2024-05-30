@@ -7,7 +7,7 @@ export async function fetchJSON<Data>(url: string, fetchFn: Fetch = fetch): Prom
 }
 
 export function formatDate(date: string, dateStyle: DateStyle = 'medium', locales = 'en') {
-	// Safari is not a good browser and doesn't support the date format '2021-12-31'
+	// Safari is mad about dashes in the date
 	const dateToFormat = new Date(date.replaceAll('-', '/'));
 	const dateFormatter = new Intl.DateTimeFormat(locales, { dateStyle });
 	return dateFormatter.format(dateToFormat);
