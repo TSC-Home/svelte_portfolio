@@ -16,7 +16,7 @@
 	<Header {data} />
 	<main class="flex-1">
 		<Herosection />
-		<!-- <Lastprojects projects={data.projects} /> -->
+		<Lastprojects projects={data.projects} />
 		<Skills />
 		<Morelinks />
 	</main>

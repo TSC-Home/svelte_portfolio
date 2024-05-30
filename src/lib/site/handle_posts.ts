@@ -1,64 +1,67 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
 import matter from 'gray-matter';
 import { markdownToHtml } from './markdown';
 import type { Post } from '$lib/types';
 
+// Import Markdown files eagerly
+const blogPostModules = import.meta.glob('../../../posts/blog_posts/**/*.md', {
+	eager: true,
+	as: 'raw'
+});
+
+const projectPostModules = import.meta.glob('../../../posts/project_posts/**/*.md', {
+	eager: true,
+	as: 'raw'
+});
+
 async function parseMarkdownFiles(postType: string) {
 	try {
+		const posts: Post[] = [];
+		let modules;
+
 		if (postType === 'blog_posts') {
-			const posts: Post[] = [];
-			const postsPath = path.resolve('posts/blog_posts');
-			const folders = await fs.readdir(postsPath);
-
-			for (const folder of folders) {
-				const markdownFilePath = path.join(postsPath, folder, `${folder}.md`);
-				const markdownContent = await fs.readFile(markdownFilePath, 'utf-8');
-				const { data } = matter(markdownContent);
-				posts.push(data as Post);
-			}
-
-			return posts;
+			modules = blogPostModules;
 		} else if (postType === 'project_posts') {
-			const posts: Post[] = [];
-			const postsPath = path.resolve('posts/project_posts');
-			const folders = await fs.readdir(postsPath);
-
-			for (const folder of folders) {
-				const markdownFilePath = path.join(postsPath, folder, `${folder}.md`);
-				const markdownContent = await fs.readFile(markdownFilePath, 'utf-8');
-				const { data } = matter(markdownContent);
-				posts.push(data as Post);
-			}
-
-			return posts;
+			modules = projectPostModules;
 		} else {
 			throw new Error('Invalid post type');
 		}
+
+		const modulePaths = Object.keys(modules);
+		for (const path of modulePaths) {
+			const content = modules[path] as string;
+			const { data } = matter(content);
+			posts.push(data as Post);
+		}
+
+		return posts;
 	} catch (e) {
 		throw new Error('Could not parse Markdown files');
 	}
 }
 
 async function parseMarkdownFile(slug: string, postType: string) {
-	if (postType === 'blog_posts') {
-		try {
-			const postPath = path.resolve(`posts/blog_posts/${slug}/${slug}.md`);
-			const markdownContent = await fs.readFile(postPath, 'utf-8');
-			return markdownToHtml(markdownContent);
-		} catch (e) {
-			throw new Error(`Could not parse ${slug}.md`);
+	try {
+		let modules;
+		let modulePath;
+
+		if (postType === 'blog_posts') {
+			modules = blogPostModules;
+			modulePath = `../../../posts/blog_posts/${slug}/${slug}.md`;
+		} else if (postType === 'project_posts') {
+			modules = projectPostModules;
+			modulePath = `../../../posts/project_posts/${slug}/${slug}.md`;
+		} else {
+			throw new Error('Invalid post type');
 		}
-	} else if (postType === 'project_posts') {
-		try {
-			const postPath = path.resolve(`posts/project_posts/${slug}/${slug}.md`);
-			const markdownContent = await fs.readFile(postPath, 'utf-8');
-			return markdownToHtml(markdownContent);
-		} catch (e) {
-			throw new Error(`Could not parse ${slug}.md`);
+
+		const content = modules[modulePath] as string;
+		if (!content) {
+			throw new Error(`Could not find ${slug}.md`);
 		}
-	} else {
-		throw new Error('Invalid post type');
+
+		return markdownToHtml(content);
+	} catch (e) {
+		throw new Error(`Could not parse ${slug}.md`);
 	}
 }
 
@@ -90,6 +93,7 @@ export async function getPostsByCategory(category: string) {
 export async function getPost(slug: string) {
 	return parseMarkdownFile(slug, 'blog_posts');
 }
+
 export async function getProject(slug: string) {
 	return parseMarkdownFile(slug, 'project_posts');
 }
