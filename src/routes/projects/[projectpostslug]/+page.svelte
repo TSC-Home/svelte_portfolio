@@ -1,18 +1,62 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Header from '$lib/ui/header.svelte';
 	import { formatDate } from '$lib/utils';
+	import * as config from '$lib/site/config';
+	import Footer from '$lib/ui/footer.svelte';
+	let slug = $page.params.projectpostslug;
 	export let data;
 	const { content, frontmatter } = data.projectpost;
 </script>
 
-<div>
-	<Header {data} />
-</div>
-<article class="prose p-28">
-	<header>
-		<h1 class="title">{frontmatter.title}</h1>
-		<p class="published">Published {formatDate(frontmatter.published)}</p>
-	</header>
+<svelte:head>
+	<title>{frontmatter.title}</title>
+	<meta property="og:site_name" content="Portfolio | ZERO" />
+	<meta property="og:title" content={frontmatter.title} />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{config.siteUrl}/api/og/{slug}/projects" />
+	<meta name="description" content={frontmatter.description} />
+	<meta name="twitter:description" content={frontmatter.description} />
+	<meta property="og:description" content={frontmatter.description} />
+	<meta property="og:image" content="{config.siteUrl}/api/og/{slug}/projects" />
+	<meta name="twitter:image" content="{config.siteUrl}/api/og/{slug}/projects" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:image:alt" content={frontmatter.description} />
+	<meta name="twitter:image:alt" content={frontmatter.description} />
+</svelte:head>
 
-	{@html content}
-</article>
+<main>
+	<Header {data} />
+	<div class="flex justify-center pt-28">
+		<div class="hidden md:flex">
+			<a
+				href="/projects"
+				class="icon fixed left-28 rounded-full bg-gray-100 p-2 hover:border-2 hover:border-gray-400 hover:bg-gray-200"
+				>arrow_back</a
+			>
+		</div>
+
+		<article class="prose mb-20 overflow-auto p-2">
+			<header>
+				<h1 class="title">{frontmatter.title}</h1>
+				<p class="published">Published {formatDate(frontmatter.published)}</p>
+			</header>
+
+			{@html content}
+		</article>
+	</div>
+	<div class="fixed bottom-0 w-full">
+		<Footer />
+	</div>
+</main>
+
+<style>
+	.title {
+		max-width: 600px;
+		margin-inline: auto;
+	}
+
+	.published {
+		margin-top: var(--spacing-24);
+	}
+</style>

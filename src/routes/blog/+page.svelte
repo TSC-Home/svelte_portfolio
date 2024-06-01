@@ -3,12 +3,25 @@
 	import Footer from '$lib/ui/footer.svelte';
 	import Card from '$lib/ui/blog_posts_cards.svelte';
 	import ErrorCard from '$lib/ui/error_card.svelte';
+	import * as config from '$lib/site/config';
 
 	export let data;
 </script>
 
 <svelte:head>
 	<title>Blog | ZERO</title>
+	<meta property="og:site_name" content="Blog | ZERO" />
+	<meta property="og:title" content="Personal blog from ZERO" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{config.siteUrl}/favicon.png" />
+	<meta name="description" content={config.siteDescription} />
+	<meta name="twitter:description" content={config.siteDescription} />
+	<meta property="og:description" content={config.siteDescription} />
+	<meta property="og:image" content="{config.siteUrl}/favicon.png" />
+	<meta name="twitter:image" content="{config.siteUrl}/favicon.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:image:alt" content={config.siteDescription} />
+	<meta name="twitter:image:alt" content={config.siteDescription} />
 </svelte:head>
 <div class="flex min-h-[100dvh] flex-col">
 	<Header {data} />

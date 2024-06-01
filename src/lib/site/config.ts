@@ -1,5 +1,5 @@
 export const siteName = 'Synthetix'; // Exporting the constant variable 'siteName'
-export const siteUrl = 'https://synthetix.me/'; // Exporting the constant variable 'siteUrl'
+export const siteUrl = 'https://beta.synthetix.me'; // Exporting the constant variable 'siteUrl'
 export const siteTitle = 'ZERO'; // Exporting the constant variable 'siteTitle'
 export const siteDescription = // Exporting the constant variable 'siteDescription'
 	'My name is Zero, and I am a backend developer and machine learning engineer. I am passionate about artificial intelligence and developing simple, useful web applications that help me and others.';
