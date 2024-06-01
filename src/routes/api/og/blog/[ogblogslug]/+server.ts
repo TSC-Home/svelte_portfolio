@@ -1,16 +1,14 @@
-export const prerender = true;
-
 import Image from './Og.svelte';
 import { componentToPng } from '$lib/utils/rednderIsmge';
-import { getProjects } from '$lib/site/handle_posts';
+import { getProjects as getPosts } from '$lib/site/handle_posts';
 
-const projectPosts = await getProjects();
+const blogPosts = await getPosts();
 
 export const GET = async ({ params }) => {
 	const width = 1200;
 	const height = 600;
-	const sanitizedSlug = params.ogslug.replace(/\.png$/, '');
-	const post = projectPosts.find((snippet) => snippet.slug === sanitizedSlug);
+	const sanitizedSlug = params.ogblogslug.replace(/\.png$/, '');
+	const post = blogPosts.find((snippet) => snippet.slug === sanitizedSlug);
 
 	return componentToPng(
 		Image,
@@ -21,7 +19,7 @@ export const GET = async ({ params }) => {
 };
 
 export const entries = () => {
-	const slugArray: any = projectPosts.map((snippet) => {
+	const slugArray: any = blogPosts.map((snippet) => {
 		return { ogslug: `${snippet.slug}.png`, slug: `${snippet.slug}.png` };
 	});
 

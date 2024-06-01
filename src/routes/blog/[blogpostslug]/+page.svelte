@@ -7,22 +7,26 @@
 	let slug = $page.params.blogpostslug;
 	export let data;
 	const { content, frontmatter } = data.blogpost;
+	let image = `${config.postImage}api/og/blog/${encodeURIComponent(frontmatter.title)}.png`;
 </script>
 
 <svelte:head>
 	<title>{frontmatter.title}</title>
-	<meta property="og:site_name" content="Blog | ZERO" />
-	<meta property="og:title" content={frontmatter.title} />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="{config.siteUrl}/api/og/{slug}/blog.png" />
-	<meta name="description" content={frontmatter.description} />
-	<meta name="twitter:description" content={frontmatter.description} />
-	<meta property="og:description" content={frontmatter.description} />
-	<meta property="og:image" content="{config.siteUrl}/api/og/{slug}/blog.png" />
-	<meta name="twitter:image" content="{config.siteUrl}/api/og/{slug}/blog.png" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta property="og:image:alt" content={frontmatter.description} />
-	<meta name="twitter:image:alt" content={frontmatter.description} />
+	<title>{frontmatter.title}</title>
+
+	<meta content={frontmatter.description} name="description" />
+
+	<meta content={frontmatter.title} property="og:title" />
+	<meta content={image} property="og:image" />
+	<meta content={config.siteUrl} property="og:url" />
+	<meta content={frontmatter.description} property="og:description" />
+	<meta content={config.siteName} property="og:site_name" />
+
+	<meta content={config.twitterHandle} name="twitter:creator" />
+	<meta content="summary_large_image" name="twitter:card" />
+	<meta content={frontmatter.title} name="twitter:title" />
+	<meta content={frontmatter.description} name="twitter:description" />
+	<meta content={image} name="twitter:image" />
 </svelte:head>
 <main>
 	<Header {data} />
