@@ -14,12 +14,12 @@
 	<meta property="og:site_name" content="Blog | ZERO" />
 	<meta property="og:title" content={frontmatter.title} />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="{config.siteUrl}/api/og/{slug}/blog" />
+	<meta property="og:url" content="{config.siteUrl}/api/og/{slug}/blog.png" />
 	<meta name="description" content={frontmatter.description} />
 	<meta name="twitter:description" content={frontmatter.description} />
 	<meta property="og:description" content={frontmatter.description} />
-	<meta property="og:image" content="{config.siteUrl}/api/og/{slug}/blog" />
-	<meta name="twitter:image" content="{config.siteUrl}/api/og/{slug}/blog" />
+	<meta property="og:image" content="{config.siteUrl}/api/og/{slug}/blog.png" />
+	<meta name="twitter:image" content="{config.siteUrl}/api/og/{slug}/blog.png" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="og:image:alt" content={frontmatter.description} />
 	<meta name="twitter:image:alt" content={frontmatter.description} />
