@@ -13,12 +13,12 @@
 	<meta property="og:site_name" content="Blog | ZERO" />
 	<meta property="og:title" content="Personal blog from ZERO" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="{config.siteUrl}/favicon.png" />
+	<meta property="og:url" content={config.siteImage} />
 	<meta name="description" content={config.siteDescription} />
 	<meta name="twitter:description" content={config.siteDescription} />
 	<meta property="og:description" content={config.siteDescription} />
-	<meta property="og:image" content="{config.siteUrl}/favicon.png" />
-	<meta name="twitter:image" content="{config.siteUrl}/favicon.png" />
+	<meta property="og:image" content={config.siteImage} />
+	<meta name="twitter:image" content={config.siteImage} />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="og:image:alt" content={config.siteDescription} />
 	<meta name="twitter:image:alt" content={config.siteDescription} />

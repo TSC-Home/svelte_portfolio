@@ -7,10 +7,26 @@
 	let slug = $page.params.blogpostslug;
 	export let data;
 	const { content, frontmatter } = data.blogpost;
-	let image = `${config.postImage}api/og/blog/${encodeURIComponent(frontmatter.title)}.png`;
+	let image = `${config.postImage}${encodeURIComponent(data.blogpost.frontmatter.title)}`;
 </script>
 
-<svelte:head></svelte:head>
+<svelte:head>
+	<title>{frontmatter.title}</title>
+
+	<meta content={frontmatter.description} name="description" />
+
+	<meta content={frontmatter.title} property="og:title" />
+	<meta content={image} property="og:image" />
+	<meta content={config.siteUrl} property="og:url" />
+	<meta content={frontmatter.description} property="og:description" />
+	<meta content={config.siteName} property="og:site_name" />
+
+	<meta content={config.twitterHandle} name="twitter:creator" />
+	<meta content="summary_large_image" name="twitter:card" />
+	<meta content={frontmatter.title} name="twitter:title" />
+	<meta content={frontmatter.description} name="twitter:description" />
+	<meta content={image} name="twitter:image" />
+</svelte:head>
 <main>
 	<Header {data} />
 	<div class="flex justify-center pt-28">

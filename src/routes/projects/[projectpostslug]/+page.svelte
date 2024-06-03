@@ -7,10 +7,25 @@
 	let slug = $page.params.projectpostslug;
 	export let data;
 	const { content, frontmatter } = data.projectpost;
+	let image = `${config.postImage}${encodeURIComponent(frontmatter.title)}.png`;
 </script>
 
 <svelte:head>
 	<title>{frontmatter.title}</title>
+
+	<meta content={frontmatter.description} name="description" />
+
+	<meta content={frontmatter.title} property="og:title" />
+	<meta content={image} property="og:image" />
+	<meta content={config.siteUrl} property="og:url" />
+	<meta content={frontmatter.description} property="og:description" />
+	<meta content={config.siteName} property="og:site_name" />
+
+	<meta content={config.twitterHandle} name="twitter:creator" />
+	<meta content="summary_large_image" name="twitter:card" />
+	<meta content={frontmatter.title} name="twitter:title" />
+	<meta content={frontmatter.description} name="twitter:description" />
+	<meta content={image} name="twitter:image" />
 </svelte:head>
 
 <main>

@@ -11,20 +11,23 @@
 </script>
 
 <svelte:head>
-	<title>Home | ZERO</title>
-	<meta property="og:site_name" content="Home | ZERO" />
-	<meta property="og:title" content="Personal Website from ZERO" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="{config.siteUrl}/favicon.png" />
-	<meta name="description" content={config.siteDescription} />
-	<meta name="twitter:description" content={config.siteDescription} />
-	<meta property="og:description" content={config.siteDescription} />
-	<meta property="og:image" content="{config.siteUrl}/favicon.png" />
-	<meta name="twitter:image" content="{config.siteUrl}/favicon.png" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta property="og:image:alt" content={config.siteDescription} />
-	<meta name="twitter:image:alt" content={config.siteDescription} />
+	<title>{config.siteTitle}</title>
+
+	<meta content={config.siteDescription} name="description" />
+
+	<meta content={config.siteTitle} property="og:title" />
+	<meta content={config.siteImage} property="og:image" />
+	<meta content={config.siteUrl} property="og:url" />
+	<meta content={config.siteDescription} property="og:description" />
+	<meta content={config.siteName} property="og:site_name" />
+
+	<meta content={config.twitterHandle} name="twitter:creator" />
+	<meta content="summary_large_image" name="twitter:card" />
+	<meta content={config.siteTitle} name="twitter:title" />
+	<meta content={config.siteDescription} name="twitter:description" />
+	<meta content={config.siteImage} name="twitter:image" />
 </svelte:head>
+
 <div class="flex min-h-[100dvh] flex-col">
 	<Header {data} />
 	<main class="flex-1">
