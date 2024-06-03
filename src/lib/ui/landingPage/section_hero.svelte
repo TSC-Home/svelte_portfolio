@@ -12,7 +12,7 @@
 	});
 </script>
 
-<section class="w-full p-24 md:p-24 lg:p-32">
+<section class="w-full pt-24 sm:p-24 md:p-24 lg:p-32">
 	<div class="container px-4 md:px-6">
 		<div class="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:gap-16">
 			<div class="space-y-4">

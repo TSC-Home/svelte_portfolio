@@ -2,14 +2,14 @@
 	export let projects;
 </script>
 
-<div class="animate-fadeIn animate-delay-[1000ms]">
+<div class="animate-fadeIn animate-delay-[1000ms] flex justify-center px-2">
 	<div
 		class=" animate-slideInUp animate-delay-[950ms] rounded-lg border bg-white shadow-sm duration-700 hover:scale-105"
 	>
 		<div class="flex flex-row items-center gap-4 space-y-1.5 p-6">
 			<p class="icon">{projects.icon ? projects.icon : 'error'}</p>
 			<div class="grid gap-1">
-				<h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
+				<h3 class=" break-words text-2xl font-semibold leading-none tracking-tight">
 					{projects.title}
 				</h3>
 				<p class=" text-sm">
@@ -29,15 +29,15 @@
 			</p>
 			<div class="flex items-center gap-4 text-sm">
 				<a
-					class="inline-flex h-8 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-					href="projects/{projects.slug}"
+					class="inline-flex h-fit items-center justify-center rounded-md bg-gray-900 px-4 py-1 text-center text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+					href="blog/{projects.slug}"
 				>
 					View {projects.title}
 				</a>
 
 				{#if projects.external_link}
 					<a
-						class="inline-flex h-8 items-center justify-center rounded-md border border-gray-200 bg-white px-4 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+						class="inline-flex h-fit items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
 						target="_blank"
 						rel="noopener noreferrer"
 						href={projects.external_link}
