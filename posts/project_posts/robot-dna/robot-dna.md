@@ -4,7 +4,7 @@ description: future of mobility.
 slug: robot-dna
 published: '2024-04-14'
 category: gerneral
-icon: error
+icon: precision_manufacturing
 ---
 
 ## hey

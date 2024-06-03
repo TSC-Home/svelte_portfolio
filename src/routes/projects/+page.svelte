@@ -10,18 +10,18 @@
 
 <svelte:head>
 	<title>Portfolio | ZERO</title>
-	<!-- <meta property="og:site_name" content="Portfolio | ZERO" />
+	<meta property="og:site_name" content="Portfolio | ZERO" />
 	<meta property="og:title" content="Personal Portfolio from ZERO" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="{config.siteUrl}/favicon.png" />
+	<meta property="og:url" content={config.siteImage} />
 	<meta name="description" content={config.siteDescription} />
 	<meta name="twitter:description" content={config.siteDescription} />
 	<meta property="og:description" content={config.siteDescription} />
-	<meta property="og:image" content="{config.siteUrl}/favicon.png" />
-	<meta name="twitter:image" content="{config.siteUrl}/favicon.png" />
+	<meta property="og:image" content={config.siteImage} />
+	<meta name="twitter:image" content={config.siteImage} />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="og:image:alt" content={config.siteDescription} />
-	<meta name="twitter:image:alt" content={config.siteDescription} /> -->
+	<meta name="twitter:image:alt" content={config.siteDescription} />
 </svelte:head>
 <div class="flex min-h-[100dvh] flex-col">
 	<Header {data} />

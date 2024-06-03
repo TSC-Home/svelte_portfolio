@@ -31,4 +31,4 @@ export const working_status = {
 	github: 'Github'
 };
 
-export const imagesUrl = `https://raw.githubusercontent.com/mattcroat/joy-of-code/main/posts`;
+export const imagesUrl = `https://raw.githubusercontent.com/tsc-home/svelte_portfolio/main/posts`;

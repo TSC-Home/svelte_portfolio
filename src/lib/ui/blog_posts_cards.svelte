@@ -4,7 +4,7 @@
 
 <div class="animate-fadeIn animate-delay-[1000ms] flex justify-center px-2">
 	<div
-		class=" animate-slideInUp animate-delay-[950ms] rounded-lg border bg-white shadow-sm duration-700 hover:scale-105"
+		class=" animate-slideInUp animate-delay-[950ms] rounded-lg border bg-white shadow-sm duration-700 hover:scale-105 sm:w-full"
 	>
 		<div class="flex flex-row items-center gap-4 space-y-1.5 p-6">
 			<p class="icon">{projects.icon ? projects.icon : 'error'}</p>
