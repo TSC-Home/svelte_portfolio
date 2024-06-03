@@ -5,6 +5,7 @@ slug: person-detection
 published: '2024-04-14'
 category: gerneral
 icon: person
+draft: true
 ---
 
 ## hey
