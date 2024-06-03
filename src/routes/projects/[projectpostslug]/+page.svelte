@@ -11,18 +11,6 @@
 
 <svelte:head>
 	<title>{frontmatter.title}</title>
-	<meta property="og:site_name" content="Portfolio | ZERO" />
-	<meta property="og:title" content={frontmatter.title} />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="{config.siteUrl}/api/og/{slug}/projects" />
-	<meta name="description" content={frontmatter.description} />
-	<meta name="twitter:description" content={frontmatter.description} />
-	<meta property="og:description" content={frontmatter.description} />
-	<meta property="og:image" content="{config.siteUrl}/api/og/{slug}/projects" />
-	<meta name="twitter:image" content="{config.siteUrl}/api/og/{slug}/projects" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta property="og:image:alt" content={frontmatter.description} />
-	<meta name="twitter:image:alt" content={frontmatter.description} />
 </svelte:head>
 
 <main>
