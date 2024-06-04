@@ -13,26 +13,26 @@
 					{projects.title}
 				</h3>
 				<p class=" text-sm">
-					{projects.subtitle ? projects.subtitle : 'Oh no! I can´t find the suptitle! 🦖'}
+					{projects.subtitle ? projects.subtitle : ''}
 				</p>
 
 				<div
 					class="focus:ring-ring bg-secondary inline-flex w-fit items-center whitespace-nowrap rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
 				>
-					{projects.working_status ? projects.working_status : 'No status found'}
+					{projects.categories ? projects.categories : 'No Categorie found'}
 				</div>
 			</div>
 		</div>
 		<div class="grid gap-2 p-6">
 			<p class="text-sm text-gray-500">
-				{projects.description}
+				{projects.description ? projects.description : ''}
 			</p>
 			<div class="flex items-center gap-4 text-sm">
 				<a
 					class="inline-flex h-fit items-center justify-center rounded-md bg-gray-900 px-4 py-1 text-center text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
 					href="blog/{projects.slug}"
 				>
-					View {projects.title}
+					Read More
 				</a>
 
 				{#if projects.external_link}

@@ -7,7 +7,7 @@
 	let slug = $page.params.projectpostslug;
 	export let data;
 	const { content, frontmatter } = data.projectpost;
-	let image = `${config.postImage}${encodeURIComponent(frontmatter.title)}.png`;
+	let image = `${config.postImage}${encodeURIComponent(frontmatter.title)}`;
 </script>
 
 <svelte:head>

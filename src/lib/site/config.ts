@@ -19,7 +19,9 @@ export const categories = {
 	sveltekit: 'SvelteKit',
 	pocketbase: 'PocketBase',
 	general: 'General',
-	design: 'Design'
+	software: 'Software',
+	design: 'Design',
+	git: 'Git'
 };
 
 export const working_status = {
