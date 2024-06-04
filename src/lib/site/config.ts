@@ -1,7 +1,7 @@
 export const siteName = 'Synthetix'; // Exporting the constant variable 'siteName'
-export const siteUrl = 'https://beta.synthetix.me'; // Exporting the constant variable 'siteUrl'
+export const siteUrl = 'https://synthetix.me/'; // Exporting the constant variable 'siteUrl'
 export const siteTitle = 'ZERO | synthetix.me'; // Exporting the constant variable 'siteTitle'
-export const siteImage = 'https://beta.synthetix.me/favicon.png'; // Exporting the constant variable 'siteImage'
+export const siteImage = 'https://synthetix.me/favicon.png'; // Exporting the constant variable 'siteImage'
 export const postImage = 'https://og.synthetix.me/';
 export const twitterHandle = '@synthetix_me'; // Exporting the constant variable 'twitterHandle'
 export const siteDescription = // Exporting the constant variable 'siteDescription'

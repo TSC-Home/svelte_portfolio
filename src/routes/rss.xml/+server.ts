@@ -22,7 +22,7 @@ export async function GET() {
 						<item>
 							<title>${post.title}</title>
 							<description>${post.description}</description>
-							<link>${config.siteUrl}/blog/${post.slug}</link>
+							<link>${config.siteUrl}blog/${post.slug}</link>
 							<guid isPermaLink="true">${config.siteUrl}${post.slug}</guid>
 							<pubDate>${new Date(post.published).toUTCString()}</pubDate>
 						</item>
