@@ -23,13 +23,15 @@
 						ZERO
 					</h1>
 					<h2
-						class="animate-slideInUp animate-delay-[950ms] flex text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl"
+						class="animate-slideInUp animate-delay-[950ms] flex text-balance text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl"
 					>
-						Backend Developer & <br /> AI Engeneer
+						Backend Developer & <br /> AI Engineer
 					</h2>
 				</div>
 				<div class="animate-fadeIn animate-delay-[1000ms]">
-					<p class="animate-slideInUp animate-delay-[950ms] max-w-[600px] text-gray-500 md:text-xl">
+					<p
+						class="animate-slideInUp animate-delay-[950ms] max-w-[600px] text-balance text-gray-500 md:text-xl"
+					>
 						Experienced backend developer with a passion for building scalable and efficient web
 						applications and artificial intelligence. Proficient in multiple programming languages
 						and frameworks.

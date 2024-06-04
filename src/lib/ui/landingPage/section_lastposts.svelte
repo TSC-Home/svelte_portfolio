@@ -1,46 +1,46 @@
 <script lang="ts">
 	import type { Post } from '$lib/types';
 	import ErrorCard from '../error_card.svelte';
-	export let projects: Post[];
+	export let posts: Post[];
 </script>
 
 <section id="projects" class=" flex w-full justify-center bg-gray-100 py-12 md:py-24 lg:py-32">
 	<div class="animate-fadeIn animate-delay-[1000ms] container px-4 md:px-6">
 		<div class="flex flex-col items-center justify-center space-y-4 text-center">
 			<div class="animate-slideInUp animate-delay-[950ms] space-y-2">
-				<h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Last Projects</h2>
+				<h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Last Posts</h2>
 				<p
 					class="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
 				>
-					Check out some of my last projects.
+					Check out some of my last Blog Posts.
 				</p>
 			</div>
 		</div>
 		<div class="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-			{#if projects.length <= 1}
+			{#if posts.length <= 1}
 				<ErrorCard></ErrorCard>
 			{:else}
 				<!-- Project 1 -->
 				<a
-					href="projects/{projects[0].slug}"
+					href="blog/{posts[0].slug}"
 					class=" rounded-lg border border-gray-300 bg-white shadow-sm duration-700 hover:scale-105"
 				>
 					<div
 						class="animate-slideInUp animate-delay-[1000ms] flex flex-row items-center gap-4 space-y-1.5 p-6"
 					>
-						<p class="icon">{projects[0].icon ? projects[0].icon : 'error'}</p>
-						<div class="grid gap-1">
-							<h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
-								{projects[0].title ? projects[0].title : 'Oh no! No title found.'}
+						<p class="icon">{posts[0].icon ? posts[0].icon : 'error'}</p>
+						<div class="flex flex-col gap-1">
+							<h3 class="text-balance text-2xl font-semibold leading-none tracking-tight">
+								{posts[0].title ? posts[0].title : 'Oh no! No title found.'}
 							</h3>
 							<p class=" text-sm">
-								{projects[0].subtitle ? projects[0].subtitle : 'How is my subtitel? 🦕'}
+								{posts[0].subtitle ? posts[0].subtitle : ''}
 							</p>
 						</div>
 					</div>
-					<div class="grid gap-2 p-6">
+					<div class="flex flex-col p-6">
 						<p class="text-sm text-gray-500">
-							{projects[0].description ? projects[0].description : ''}
+							{posts[0].description ? posts[0].description : ''}
 						</p>
 						<div class="flex items-center gap-4 text-sm">
 							<p
@@ -48,17 +48,15 @@
 							>
 								View Project
 							</p>
-							{#if projects[0].external_link}
+							{#if posts[0].external_link}
 								<a
 									class="inline-flex h-fit items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-1 text-center text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
 									target="_blank"
 									rel="noopener noreferrer"
-									href={projects[0].external_link}
+									href={posts[0].external_link}
 								>
 									<p class="icon mr-1">captive_portal</p>
-									{projects[0].external_link_text
-										? projects[0].external_link_text
-										: 'External Link'}
+									{posts[0].external_link_text ? posts[0].external_link_text : 'External Link'}
 								</a>
 							{/if}
 						</div>
@@ -66,25 +64,25 @@
 				</a>
 				<!-- Project 2 -->
 				<a
-					href="projects/{projects[1].slug}"
+					href="blog/{posts[1].slug}"
 					class=" rounded-lg border border-gray-300 bg-white shadow-sm duration-700 hover:scale-105"
 				>
 					<div
 						class="animate-slideInUp animate-delay-[1000ms] flex flex-row items-center gap-4 space-y-1.5 p-6"
 					>
-						<p class="icon">{projects[1].icon ? projects[1].icon : 'error'}</p>
-						<div class="grid gap-1">
-							<h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
-								{projects[1].title ? projects[1].title : 'Oh no! No title found.'}
+						<p class="icon w-10">{posts[1].icon ? posts[1].icon : 'error'}</p>
+						<div class="flex flex-col gap-1">
+							<h3 class=" text-balance text-2xl font-semibold leading-none tracking-tight">
+								{posts[1].title ? posts[1].title : 'Oh no! No title found.'}
 							</h3>
 							<p class=" text-sm">
-								{projects[1].subtitle ? projects[1].subtitle : 'How is my subtitel? 🦕'}
+								{posts[1].subtitle ? posts[1].subtitle : 'How is my subtitel? 🦕'}
 							</p>
 						</div>
 					</div>
-					<div class="grid gap-2 p-6">
+					<div class=" flex flex-col gap-2 p-6">
 						<p class="text-sm text-gray-500">
-							{projects[1].description ? projects[1].description : ''}
+							{posts[1].description ? posts[1].description : ''}
 						</p>
 						<div class="flex items-center gap-4 text-sm">
 							<p
@@ -92,17 +90,15 @@
 							>
 								View Project
 							</p>
-							{#if projects[1].external_link}
+							{#if posts[1].external_link}
 								<a
 									class="inline-flex h-fit items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-1 text-center text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
 									target="_blank"
 									rel="noopener noreferrer"
-									href={projects[1].external_link}
+									href={posts[1].external_link}
 								>
 									<p class="icon mr-1">captive_portal</p>
-									{projects[1].external_link_text
-										? projects[1].external_link_text
-										: 'External Link'}
+									{posts[1].external_link_text ? posts[1].external_link_text : 'External Link'}
 								</a>
 							{/if}
 						</div>
@@ -111,7 +107,12 @@
 			{/if}
 		</div>
 		<div class="flex justify-center">
-			<a href="/projects" class="text-md rounded-md bg-black p-2 text-white transition-transform delay-300 hover:scale-105 active:bg-gray-800"> More Projects</a>
+			<a
+				href="/blog"
+				class="text-md rounded-md bg-black p-2 text-white transition-transform delay-300 hover:scale-105 active:bg-gray-800"
+			>
+				More Posts</a
+			>
 		</div>
 	</div>
 </section>

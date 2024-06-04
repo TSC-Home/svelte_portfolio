@@ -126,8 +126,9 @@
 	<div class="hidden md:flex lg:flex">
 		{#if $page.route.id === '/'}
 			<nav class="ml-auto flex gap-4 sm:gap-6">
-				<a class="text-sm font-medium underline-offset-4 hover:underline" href="#projects">
-					Projects
+				<a class="text-sm font-medium underline-offset-4 hover:underline" href="/blog"> Blog </a>
+				<a class="text-sm font-medium underline-offset-4 hover:underline" href="/projects">
+					Portfolio
 				</a>
 				<a class="text-sm font-medium underline-offset-4 hover:underline" href="#skills">
 					Skills

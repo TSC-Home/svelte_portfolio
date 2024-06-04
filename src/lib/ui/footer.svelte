@@ -6,7 +6,12 @@
 		<a class="text-xs underline-offset-4 hover:underline" href="https://github.com/tsc-home">
 			GitHub
 		</a>
-		<a class="text-xs underline-offset-4 hover:underline" href="https://synthetix.me/rss.xml">
+		<a
+			class="text-xs underline-offset-4 hover:underline"
+			target="_blank"
+			rel="noopener noreferrer"
+			href="https://synthetix.me/rss.xml"
+		>
 			RSS Feed
 		</a>
 		<a class="text-xs underline-offset-4 hover:underline" href="mailto:hello@synthetic.me">

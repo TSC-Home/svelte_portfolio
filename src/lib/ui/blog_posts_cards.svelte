@@ -3,8 +3,9 @@
 </script>
 
 <div class="animate-fadeIn animate-delay-[1000ms] flex justify-center px-2">
-	<div
-		class=" animate-slideInUp animate-delay-[950ms] rounded-lg border bg-white shadow-sm duration-700 hover:scale-105 sm:w-full"
+	<a
+		href="blog/{projects.slug}"
+		class=" animate-slideInUp animate-delay-[950ms] rounded-lg border border-gray-300 bg-white shadow-sm duration-700 hover:scale-105 sm:w-full"
 	>
 		<div class="flex flex-row items-center gap-4 space-y-1.5 p-6">
 			<p class="icon">{projects.icon ? projects.icon : 'error'}</p>
@@ -28,12 +29,11 @@
 				{projects.description ? projects.description : ''}
 			</p>
 			<div class="flex items-center gap-4 text-sm">
-				<a
+				<p
 					class="inline-flex h-fit items-center justify-center rounded-md bg-gray-900 px-4 py-1 text-center text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-					href="blog/{projects.slug}"
 				>
 					Read More
-				</a>
+				</p>
 
 				{#if projects.external_link}
 					<a
@@ -48,5 +48,5 @@
 				{/if}
 			</div>
 		</div>
-	</div>
+	</a>
 </div>

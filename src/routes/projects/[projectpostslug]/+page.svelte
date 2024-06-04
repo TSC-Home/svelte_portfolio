@@ -41,7 +41,7 @@
 
 		<article class="prose mb-20 overflow-auto p-2">
 			<header>
-				<h1 class="title">{frontmatter.title}</h1>
+				<h1 class="">{frontmatter.title}</h1>
 				<p class="published">Published {formatDate(frontmatter.published)}</p>
 			</header>
 
@@ -54,11 +54,6 @@
 </main>
 
 <style>
-	.title {
-		max-width: 600px;
-		margin-inline: auto;
-	}
-
 	.published {
 		margin-top: var(--spacing-24);
 	}
