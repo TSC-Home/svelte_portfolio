@@ -1,9 +1,6 @@
 <script lang="ts">
-	import Header from '$lib/ui/header.svelte';
-	import Footer from '$lib/ui/footer.svelte';
-	import Card from '$lib/ui/blog_posts_cards.svelte';
-	import ErrorCard from '$lib/ui/error_card.svelte';
 	import * as config from '$lib/site/config';
+	import Card from '$lib/ui/card.svelte';
 
 	export let data;
 </script>
@@ -24,7 +21,6 @@
 	<meta name="twitter:image:alt" content={config.siteDescription} />
 </svelte:head>
 <div class="flex min-h-[100dvh] flex-col">
-	<Header {data} />
 	<main class="flex-1">
 		<section id="more" class=" flex w-full justify-center bg-gray-100 py-24 md:py-24 lg:py-32">
 			<div class="container px-4 md:px-6">
@@ -40,18 +36,22 @@
 					</div>
 				</div>
 				<div class="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-					{#if data.posts}
-						{#each data.posts as posts}
-							<Card projects={posts} />
-						{/each}
-					{:else}
-						<div>
-							<ErrorCard />
-						</div>
-					{/if}
+					<!-- card
+					<pre>
+						{JSON.stringify(data.blogposts, null, 2)}
+					</pre> -->
+					{#each data.blogposts as post}
+						<Card
+							icon={post.icon}
+							title={post.title}
+							subtitle={post.subtitle}
+							description={post.description}
+							slug="/blog/{post.slug}"
+							externallink={post.externallink}
+						/>
+					{/each}
 				</div>
 			</div>
 		</section>
 	</main>
-	<Footer />
 </div>

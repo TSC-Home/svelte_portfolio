@@ -29,7 +29,6 @@
 </svelte:head>
 
 <div class="flex min-h-[100dvh] flex-col">
-	<Header {data} />
 	<main class="flex-1">
 		<Herosection />
 		<Lastprojects projects={data.projects} />

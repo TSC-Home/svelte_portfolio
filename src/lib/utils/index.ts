@@ -16,3 +16,29 @@ export function formatDate(date: string, dateStyle: DateStyle = 'medium', locale
 export function formatNumber(number: number, locales = 'en') {
 	return new Intl.NumberFormat(locales).format(number);
 }
+
+export function listPosts() {
+	const modules = import.meta.glob('../../routes/blog/**/*.markdoc', {
+		eager: true
+	});
+
+	const snippets = Object.entries(modules).map(([filepath, module]) => {
+		//@ts-expect-error it does exist
+		const { frontmatter } = module;
+
+		const parts = filepath.split('/+page.markdoc')[0].split('/');
+		const slug = parts[parts.length - 1];
+
+		return {
+			title: frontmatter.title,
+			subtitle: frontmatter.subtitle,
+			description: frontmatter.description,
+			slug,
+			tags: frontmatter.tags,
+			icon: frontmatter.icon,
+			draft: frontmatter.draft,
+			externallink: frontmatter.externallink
+		};
+	});
+	return snippets;
+}

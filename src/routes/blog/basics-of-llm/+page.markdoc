@@ -2,10 +2,13 @@
 title: Basics of LLM
 subtitle: Understanding Large Language Models
 description: A beginner's guide to Large Language Models (LLMs) and their fundamentals.
-slug: basics-of-llm
 published: '2024-05-29'
-category: general
-working_status: AI
+tags :
+  - ai
+  - llm
+contributors: 
+  - tsc-home
+  - fabian9799
 icon: home
 draft: false
 ---
