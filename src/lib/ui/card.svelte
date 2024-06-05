@@ -6,7 +6,6 @@
 	export let description: string | null;
 	export let slug: string;
 	export let externallink: string | null;
-	console.log(externallink);
 </script>
 
 <div class="animate-fadeIn animate-delay-[1000ms]">

@@ -1,11 +1,8 @@
 <script lang="ts">
-	import Header from '$lib/ui/header.svelte';
-	import Footer from '$lib/ui/footer.svelte';
-	import LastPosts from '$lib/ui/landingPage/section_lastposts.svelte';
 	import Skills from '$lib/ui/landingPage/section_skills.svelte';
 	import Herosection from '$lib/ui/landingPage/section_hero.svelte';
-	import Lastprojects from '$lib/ui/landingPage/seaction_lastprojects.svelte';
 	import * as config from '$lib/site/config';
+	import TowCardSection from '$lib/ui/tow_card_section.svelte';
 
 	export let data;
 </script>
@@ -31,9 +28,19 @@
 <div class="flex min-h-[100dvh] flex-col">
 	<main class="flex-1">
 		<Herosection />
-		<Lastprojects projects={data.projects} />
+		<TowCardSection
+			siteTitle="Last Projects"
+			siteDescription="Check out some of my last projects."
+			posts={data.projects}
+			route="projects"
+		/>
 		<Skills />
-		<LastPosts posts={data.blogs} />
+
+		<TowCardSection
+			siteTitle="Last Blogs"
+			siteDescription="Check out some of my last blogs."
+			posts={data.blogs}
+			route="blog"
+		/>
 	</main>
-	<Footer />
 </div>

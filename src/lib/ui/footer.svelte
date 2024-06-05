@@ -10,7 +10,7 @@
 			class="text-xs underline-offset-4 hover:underline"
 			target="_blank"
 			rel="noopener noreferrer"
-			href="https://synthetix.me/rss.xml"
+			href="/rss.xml"
 		>
 			RSS Feed
 		</a>

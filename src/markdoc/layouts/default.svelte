@@ -1,10 +1,31 @@
 <script lang="ts">
 	import { formatDate } from '$lib/utils/index';
+	import * as config from '$lib/site/config';
 	export let title;
 	export let published;
+	export let description;
 	export let contributors;
 	export let tags;
+	let image = `${config.postImage}${encodeURIComponent(title)}`;
 </script>
+
+<svelte:head>
+	<title>{title}</title>
+
+	<meta content={description} name="description" />
+
+	<meta content={title} property="og:title" />
+	<meta content={image} property="og:image" />
+	<meta content={config.siteUrl} property="og:url" />
+	<meta content={description} property="og:description" />
+	<meta content={config.siteName} property="og:site_name" />
+
+	<meta content={config.twitterHandle} name="twitter:creator" />
+	<meta content="summary_large_image" name="twitter:card" />
+	<meta content={title} name="twitter:title" />
+	<meta content={description} name="twitter:description" />
+	<meta content={image} name="twitter:image" />
+</svelte:head>
 
 <header class="mx-auto mt-8 max-w-[65ch] p-2">
 	<h1 class="text-balance text-4xl font-bold">{title}</h1>

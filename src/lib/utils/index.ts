@@ -22,7 +22,7 @@ export function listPosts() {
 		eager: true
 	});
 
-	const snippets = Object.entries(modules).map(([filepath, module]) => {
+	const formattedModules = Object.entries(modules).map(([filepath, module]) => {
 		//@ts-expect-error it does exist
 		const { frontmatter } = module;
 
@@ -35,10 +35,38 @@ export function listPosts() {
 			description: frontmatter.description,
 			slug,
 			tags: frontmatter.tags,
+			published: frontmatter.published,
 			icon: frontmatter.icon,
 			draft: frontmatter.draft,
 			externallink: frontmatter.externallink
 		};
 	});
-	return snippets;
+	return formattedModules;
+}
+
+export function listProjects() {
+	const modules = import.meta.glob('../../routes/projects/**/*.markdoc', {
+		eager: true
+	});
+
+	const formattedModules = Object.entries(modules).map(([filepath, module]) => {
+		//@ts-expect-error it does exist
+		const { frontmatter } = module;
+
+		const parts = filepath.split('/+page.markdoc')[0].split('/');
+		const slug = parts[parts.length - 1];
+
+		return {
+			title: frontmatter.title,
+			subtitle: frontmatter.subtitle,
+			description: frontmatter.description,
+			slug,
+			tags: frontmatter.tags,
+			published: frontmatter.published,
+			icon: frontmatter.icon,
+			draft: frontmatter.draft,
+			externallink: frontmatter.externallink
+		};
+	});
+	return formattedModules;
 }

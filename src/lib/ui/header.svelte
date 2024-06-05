@@ -29,7 +29,7 @@
 </script>
 
 <header
-	class="sticky top-0 flex h-16 w-full items-center justify-between border bg-white px-4 lg:px-6"
+	class="sticky top-0 z-10 flex h-16 w-full items-center justify-between border bg-white px-4 lg:px-6"
 >
 	<div class="flex w-full md:justify-start">
 		<a class=" hidden items-center justify-center md:flex" href="/">

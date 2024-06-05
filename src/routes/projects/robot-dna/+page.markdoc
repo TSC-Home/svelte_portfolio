@@ -1,0 +1,20 @@
+---
+title: Robot DNA
+subtitle: Internet presents for the company Robot DNA
+description: The Internet presents for the company Robot DNA was created in SvelteKit and TailwindCSS.
+published: '2024-06-05' 
+tags :
+  - sveltekit
+  - tailwindcss
+  - commissions
+contributors: 
+  - tsc-home
+  - louist2469
+icon: precision_manufacturing
+externallink: https://robot-dna.com
+draft: true
+---
+
+# hey guys
+
+´´´bash
