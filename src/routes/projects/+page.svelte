@@ -1,17 +1,14 @@
 <script lang="ts">
-	import Footer from '$lib/ui/footer.svelte';
-	import Card from '$lib/ui/project_posts_cards.svelte';
-	import Header from '$lib/ui/header.svelte';
-	import ErrorCard from '$lib/ui/error_card.svelte';
 	import * as config from '$lib/site/config';
+	import Card from '$lib/ui/card.svelte';
 
 	export let data;
 </script>
 
 <svelte:head>
-	<title>Portfolio | ZERO</title>
-	<meta property="og:site_name" content="Portfolio | ZERO" />
-	<meta property="og:title" content="Personal Portfolio from ZERO" />
+	<title>Blog | ZERO</title>
+	<meta property="og:site_name" content="Blog | ZERO" />
+	<meta property="og:title" content="Personal blog from ZERO" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={config.siteImage} />
 	<meta name="description" content={config.siteDescription} />
@@ -24,7 +21,6 @@
 	<meta name="twitter:image:alt" content={config.siteDescription} />
 </svelte:head>
 <div class="flex min-h-[100dvh] flex-col">
-	<Header {data} />
 	<main class="flex-1">
 		<section id="more" class=" flex w-full justify-center bg-gray-100 py-24 md:py-24 lg:py-32">
 			<div class="container px-4 md:px-6">
@@ -40,18 +36,18 @@
 					</div>
 				</div>
 				<div class="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-					{#if data.projects}
-						{#each data.projects as project, i}
-							<Card projects={project} />
-						{/each}
-					{:else}
-						<div>
-							<ErrorCard />
-						</div>
-					{/if}
+					{#each data.projects as post}
+						<Card
+							icon={post.icon}
+							title={post.title}
+							subtitle={post.subtitle}
+							description={post.description}
+							slug="/projects/{post.slug}"
+							externallink={post.externallink}
+						/>
+					{/each}
 				</div>
 			</div>
 		</section>
 	</main>
-	<Footer />
 </div>

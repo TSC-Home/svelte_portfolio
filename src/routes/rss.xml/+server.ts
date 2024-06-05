@@ -1,11 +1,9 @@
-import { getPosts } from '$lib/site/handle_posts';
 import * as config from '$lib/site/config';
+import { listPosts } from '$lib/utils';
 
 export const prerender = true;
 
 export async function GET() {
-	const posts = await getPosts();
-
 	const headers = { 'Content-Type': 'application/xml' };
 
 	const xml = `
@@ -15,18 +13,23 @@ export async function GET() {
 				<description>${config.siteDescription}</description>
 				<link>${config.siteUrl}</link>
 				<atom:link href="${config.siteUrl}rss.xml" rel="self" type="application/rss+xml"/>
-				${posts
+				${(await listPosts())
 					.reverse()
 					.map(
-						(post) => `
-						<item>
-							<title>${post.title}</title>
-							<description>${post.description}</description>
-							<link>${config.siteUrl}blog/${post.slug}</link>
-							<guid isPermaLink="true">${config.siteUrl}${post.slug}</guid>
-							<pubDate>${new Date(post.published).toUTCString()}</pubDate>
-						</item>
-					`
+						(post) =>
+							`${
+								post.draft
+									? ''
+									: `
+					<item>
+						<title>${post.title}</title>
+						<link>${config.siteUrl}blog/${post.slug}</link>
+						<pubDate>${new Date(post.published).toUTCString()}</pubDate>
+						<guid>${config.siteUrl}blog/${post.slug}</guid>
+						<description>${post.description}</description>
+					</item>
+				`
+							}`
 					)
 					.join('')}
 			</channel>

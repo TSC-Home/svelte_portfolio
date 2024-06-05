@@ -2,11 +2,10 @@
 title: Person Detection with Python
 subtitle: Exploring the Technical Details of MediaPipe for Person Detection
 description: Dive into the depths of person detection using Python, MediaPipe, and Google's AI technology, including technical details and practical implementation.
-slug: person-detection-python-mediapipe-google
 published: '2024-05-30'
-category: computer-vision
 icon: camera
-working_status:
+externallink:
+draft: true
 ---
 
 ## Introduction

@@ -2,10 +2,13 @@
 title: Git. A Powerful Version Control System
 subtitle: Mastering Git for efficient collaboration and version management
 description:
-slug: git-version-control
 published: '2024-06-04'
-categories: software
+tags:
+  - git
+contributors: 
+  - tsc-home
 icon: call_merge
+externallink:
 draft: false
 ---
 

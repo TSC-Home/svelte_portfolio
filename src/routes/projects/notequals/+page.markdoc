@@ -1,13 +1,23 @@
 ---
 title: Notequals.net
+subtitle: Automation builder for simple and complex tasks.
+description: Notequals.net is a powerful automation builder that can be used for both simple and complex tasks. 
+published: '2024-06-03' 
+tags :
+  - sveltekit
+  - tailwindcss
+  - bullmq
 
-subtitle: Simple usefull Automation builder.
-slug: notequals
-published: '2024-06-03'
-category: Automations
+contributors: 
+  - tsc-home
 icon: autorenew
+externallink:
 draft: false
 ---
+
+
+
+## Notequals is curently under development and will be released in the future.
 
 Notequals.net is a simple yet powerful automation builder that can be used for both simple and complex tasks.
 

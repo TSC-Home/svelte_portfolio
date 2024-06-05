@@ -29,7 +29,7 @@
 </script>
 
 <header
-	class="fixed z-10 flex h-16 w-full items-center justify-between border bg-white px-4 lg:px-6"
+	class="sticky top-0 z-10 flex h-16 w-full items-center justify-between border bg-white px-4 lg:px-6"
 >
 	<div class="flex w-full md:justify-start">
 		<a class=" hidden items-center justify-center md:flex" href="/">
@@ -124,46 +124,29 @@
 		</section>
 	</div>
 	<div class="hidden md:flex lg:flex">
-		{#if $page.route.id === '/'}
-			<nav class="ml-auto flex gap-4 sm:gap-6">
-				<a class="text-sm font-medium underline-offset-4 hover:underline" href="/blog"> Blog </a>
-				<a class="text-sm font-medium underline-offset-4 hover:underline" href="/projects">
-					Portfolio
-				</a>
-				<a class="text-sm font-medium underline-offset-4 hover:underline" href="#skills">
-					Skills
-				</a>
-				<a
-					class="text-sm font-medium underline-offset-4 hover:underline"
-					href="mailto:hello@synthetix.me"
-				>
-					Contact
-				</a>
-			</nav>
-		{:else if $page.route.id === '/projects'}
-			<nav class="ml-auto flex gap-4 sm:gap-6">
-				<a class="text-sm font-medium underline-offset-4 hover:underline" href="/"> Home </a>
-				<a class="text-sm font-medium underline-offset-4 hover:underline" href="/blog"> Blog </a>
-				<a
-					class="text-sm font-medium underline-offset-4 hover:underline"
-					href="mailto:hello@synthetix.me"
-				>
-					Contact
-				</a>
-			</nav>
-		{:else if $page.route.id === '/blog'}
-			<nav class="ml-auto flex gap-4 sm:gap-6">
-				<a class="text-sm font-medium underline-offset-4 hover:underline" href="/"> Home </a>
-				<a class="text-sm font-medium underline-offset-4 hover:underline" href="/projects">
-					Portfolio
-				</a>
-				<a
-					class="text-sm font-medium underline-offset-4 hover:underline"
-					href="mailto:hello@synthetix.me"
-				>
-					Contact
-				</a>
-			</nav>
-		{/if}
+		<nav class="ml-auto flex gap-4 sm:gap-6">
+			<a
+				class="text-sm font-medium underline-offset-4 {$page.url.pathname === '/blog'
+					? 'underline'
+					: ''} hover:underline"
+				href="/blog"
+			>
+				Blog
+			</a>
+			<a
+				class="text-sm font-medium underline-offset-4 {$page.url.pathname === '/projects'
+					? 'underline'
+					: ''} hover:underline"
+				href="/projects"
+			>
+				Portfolio
+			</a>
+			<a
+				class="text-sm font-medium underline-offset-4 hover:underline"
+				href="mailto:hello@synthetix.me"
+			>
+				Contact
+			</a>
+		</nav>
 	</div>
 </header>
