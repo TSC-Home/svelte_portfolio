@@ -28,11 +28,13 @@
 				<p class="text-sm text-gray-500">{description}</p>
 			{/if}
 			<div class="flex items-center gap-4 text-sm">
-				<a
-					href={slug}
-					class="inline-flex h-fit items-center justify-center rounded-md bg-gray-900 px-4 py-1 text-center text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-					>Read More</a
-				>
+				{#if slug}
+					<a
+						href={slug}
+						class="inline-flex h-fit items-center justify-center rounded-md bg-gray-900 px-4 py-1 text-center text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+						>Read More</a
+					>
+				{/if}
 				{#if externallink}
 					<a
 						class="inline-flex h-fit items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
