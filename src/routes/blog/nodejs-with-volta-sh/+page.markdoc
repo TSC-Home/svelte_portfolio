@@ -1,0 +1,170 @@
+---
+title: Installing Node.js with Volta.sh
+subtitle: How to install Node.js with Volta.sh
+description: We will learn how to install Node.js with Volta.sh and how to use it to manage multiple Node.js versions and global packages.
+published: '2024-06-07'
+tags :
+  - Volta.sh
+  - Node.js
+contributors: 
+  - tsc-home
+icon: bolt
+externallink: https://volta.sh/
+draft: false
+---
+
+`Last updated: 06.07.2024`
+
+# Installing Node.js with Volta.sh
+In this blog post, we will learn how to install Node.js with Volta.sh and how to use it to manage multiple Node.js versions and global packages.
+
+
+## What is Volta.sh?
+Volta.sh is a command-line tool that allows you to easily manage multiple Node.js versions and global packages. It provides a simple and intuitive interface for installing, updating, and managing Node.js versions, as well as managing global packages.
+
+## How to install Volta.sh
+
+## Install on Unix-based systems (Linux, macOS, etc.)
+To install Volta.sh on Unix-based systems, you can use the following command:
+
+```bash
+curl https://get.volta.sh | bash
+```
+or [Bash](https://www.gnu.org/software/bash/) , [zsh](https://zsh.org), and fish, this installer will automatically update your console startup script. If you wish to prevent modifications to your console startup script, see Skipping Volta Setup on the [Volta Website](https://volta.sh). To manually configure your shell to use Volta, edit your console startup scripts to:
+
+- Set the VOLTA_HOME variable to $HOME/.volta
+- Add $VOLTA_HOME/bin to the beginning of your PATH variable
+
+## Install on Windows
+To install Volta.sh on Windows, you can use the following installer: [Volta.sh Installer](https://github.com/volta-cli/volta/releases/download/v1.1.1/volta-1.1.1-windows-x86_64.msi)
+
+Volta's functionality depends on creating symlinks, so you must either:
+
+- [Enable Developer Mode](https://docs.microsoft.com/en-us/windows/dev-environment/dev-mode) (recommended)
+- Run Volta with elevated privileges (not recommended)
+
+## How to use Volta.sh
+Once you have installed Volta.sh, you can use it to manage multiple Node.js versions and global packages. Here are some of the key features of Volta.sh:
+
+### Installing Node.js Versions
+To install a specific Node.js version, you can use the `volta install` command followed by the version number. For example, to install Node.js version 16.14.2, you can run the following command:
+
+```bash
+volta install 16.14.2
+```
+or to install the latest version of Node.js, you can run the following command:
+
+```bash
+volta install node
+```
+
+## Install multiple Node.js versions
+To install multiple Node.js versions, you can use the `volta install` command multiple times. For example, to install Node.js versions 16.14.2 and 18.16.0, you can run the following command:
+
+```bash
+volta install 16.14.2 18.16.0
+```
+
+## Updating Node.js Versions
+To update a specific Node.js version, you can use the `volta update` command followed by the version number. For example, to update Node.js version 16.14.2, you can run the following command:
+
+```bash 
+volta update 16.14.2
+```
+
+## Updating all Node.js Versions
+To update all Node.js versions, you can use the `volta update` command without any arguments. For example, to update all Node.js versions, you can run the following command: 
+
+```bash
+volta update
+```
+
+## Uninstalling Node.js Versions  
+To uninstall a specific Node.js version, you can use the `volta uninstall` command followed by the version number. For example, to uninstall Node.js version 16.14.2, you can run the following command:
+
+```bash
+volta uninstall 16.14.2
+```
+
+## Uninstalling all Node.js Versions
+To uninstall all Node.js versions, you can use the `volta uninstall` command without any arguments. For example, to uninstall all Node.js versions, you can run the following command:
+
+```bash
+volta uninstall
+```
+
+## Managing Global Packages
+To manage global packages, you can use the `volta global` command followed by the package name and version. For example, to install the `typescript` package globally, you can run the following command:
+
+```bash
+volta global add typescript
+```
+
+To update a global package, you can use the `volta global update` command followed by the package name. For example, to update the `typescript` package globally, you can run the following command:
+
+```bash
+volta global update typescript
+```
+
+To uninstall a global package, you can use the `volta global remove` command followed by the package name. For example, to uninstall the `typescript` package globally, you can run the following command:
+
+```bash 
+volta global remove typescript
+```
+
+## Managing Local Packages
+To manage local packages, you can use the `volta local` command followed by the package name and version. For example, to install the `typescript` package locally, you can run the following command:
+
+```bash
+volta local add typescript
+```
+
+To update a local package, you can use the `volta local update` command followed by the package name. For example, to update the `typescript` package locally, you can run the following command: 
+  
+```bash
+volta local update typescript
+```
+
+To uninstall a local package, you can use the `volta local remove` command followed by the package name. For example, to uninstall the `typescript` package locally, you can run the following command:
+
+```bash
+volta local remove typescript
+```
+
+## Managing Node.js Versions with Volta.sh
+Volta.sh allows you to easily manage multiple Node.js versions and global packages. Here are some of the key features of Volta.sh: 
+
+### Use a specific Node.js version
+To use a specific Node.js version, you can use the `volta use` command followed by the version number. For example, to use Node.js version 16.14.2, you can run the following command:
+
+```bash
+volta use 16.14.2
+```
+### Use in a project directory a specific Node.js version
+To use a specific Node.js version in a project directory, you can use the `volta use` command followed by the version number and the path to the project directory. For example, to use Node.js version 16.14.2 in the `/path/to/project` directory, you can run the following command:
+
+```bash
+volta use 16.14.2 /path/to/project
+```
+### Use the latest version of Node.js
+To use the latest version of Node.js, you can use the `volta use` command without any arguments. For example, to use the latest version of Node.js, you can run the following command:
+
+```bash
+volta use
+```
+### Use a specific Node.js version in a project directory
+To use a specific Node.js version in a project directory, you can use the `volta use` command followed by the version number and the path to the project directory. For example, to use Node.js version 16.14.2 in the `/path/to/project` directory, you can run the following command:
+
+```bash
+volta use 16.14.2 /path/to/project
+```
+
+### Use the latest version of Node.js
+To use the latest version of Node.js, you can use the `volta use` command without any arguments. For example, to use the latest version of Node.js, you can run the following command:
+
+
+## If You have any questions or need help with Volta.sh, please contact me at [hello@synthetix.me](mailto:hello@synthetix.me) or the look for help in the Volta Comunity and on the [Volta GitHub Repository](https://github.com/volta-cli/volta/issues).
+
+## Please check the [Volta Documentation](https://docs.volta.sh/) for more information about Volta.sh and its features. And Spend love ❤️ to the Volta Developers and the community and check it out.
+
+## I hope you enjoy using Volta.sh and and I hope i helped you in your journey.🦕

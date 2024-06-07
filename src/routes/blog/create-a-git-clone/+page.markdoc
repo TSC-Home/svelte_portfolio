@@ -1,0 +1,88 @@
+---
+title: Create a Git Clone
+subtitle: How to create a git clone
+description: How to create a git clone in a few steps with typescript
+published: '2024-06-06' 
+tags :
+  - typescript
+  - git
+  - bun
+contributors: 
+  - tsc-home
+icon: merge
+externallink:
+draft: true
+---
+
+# Creating Your Own Git Clone in TypeScript
+In this blog post, I will walk you through the process of creating your own Git clone using TypeScript. We'll implement basic Git functionalities such as init, commit and push. Along the way, we'll cover the basics of TypeScript and Git, and learn how to use TypeScript to create a Git clone.
+
+## Requirements
+- [Node.js](https://nodejs.org/)
+- [Git](https://git-scm.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Bun](https://bun.sh/)
+
+### `As a newcomer to the program, the following points are important for all others you can skip to the start of programming`
+
+## What is Git?
+Git is a version control system that allows you to track changes to your files and collaborate with others. It's a powerful tool for managing code and making changes to your projects.
+If you want to learn more about Git, you can check out my Blog Post over Git [Git Blog Post](/blog/git-version-control) or the official Git documentation [Git Documentation](https://git-scm.com/doc).
+
+## What is TypeScript?
+TypeScript is a programming language that adds static typing to JavaScript. It's a great tool for catching errors and improving code quality. If you want to learn more about TypeScript, you can check out  the official TypeScript documentation [TypeScript Documentation](https://www.typescriptlang.org/docs).
+
+# Let's get started!
+
+## Step 1: Installing TypeScript
+To get started with TypeScript, you'll need to install it on your computer. You can do this by running the following command in your terminal:
+
+```bash
+npm install -g typescript
+```
+
+This will install the TypeScript compiler globally on your system, allowing you to use it from any directory.
+
+## Step 2: Creating a New Project or Cloning my TypeScript Template
+Now that you have TypeScript installed, you can create a new project by running the following command:
+
+```bash
+tsc --init
+```
+or you can clone my TypeScript Template [here](https://github.com/tsc-home/typescript-template)
+
+```bash
+
+git clone https://github.com/tsc-home/typescript-template.git git-clone-template
+```
+
+This will create a new `git-clone-template` directory in your current directory, which is used to track changes to your files.
+
+## Step 3: Adding Files to the Repository
+Now that you have a Git repository set up, you can start adding the files of my TypeScript Template to it. 
+
+### If you have a Linux or MacOS system you can use the following command to run this project:
+
+```bash
+./your_git.sh
+```
+If you can run this make sure you have installed the latest version of Node.js, TypeScript and Bun and please make sure you have the permissions to run the command or add the permissions to the `./your_git.sh` file. The add the permissions run the following command in the terminal:
+```bash
+chmod +x ./your_git.sh
+```
+If the problem persists please open an issue in the [GitHub Repository](https://github.com/tsc-home/typescript-template/issues) or send me a mail to [hello@synthetix.me](mailto:hello@synthetix.me).
+
+### If you have a Windows system you can use the following command to run this project:
+You must install Git Bash for Windows to run this project or you make it in WSL (Windows Subsystem for Linux).
+Cklick on the following link to install Git Bash for Windows:
+[Git Bash for Windows](https://git-scm.com/download/win)
+
+and then run the following command in the Git Bash terminal:
+```bash
+./your_git.sh
+```
+
+
+
+
+
