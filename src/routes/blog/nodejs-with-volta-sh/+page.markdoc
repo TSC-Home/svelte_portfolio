@@ -164,7 +164,7 @@ volta use 16.14.2 /path/to/project
 To use the latest version of Node.js, you can use the `volta use` command without any arguments. For example, to use the latest version of Node.js, you can run the following command:
 
 
-## If You have any questions or need help with Volta.sh, please contact me at [hello@synthetix.me](mailto:hello@synthetix.me) or the look for help in the Volta Comunity and on the [Volta GitHub Repository](https://github.com/volta-cli/volta/issues).
+## If You have any questions or need help with Volta.sh, please contact me at [hello@synthetix.me](mailto:hello@synthetix.me) or look for help in the Volta Comunity and on the [Volta GitHub Repository](https://github.com/volta-cli/volta/issues).
 
 ## Please check the [Volta Documentation](https://docs.volta.sh/) for more information about Volta.sh and its features. And Spend love ❤️ to the Volta Developers and the community and check it out.
 
