@@ -28,6 +28,7 @@ Volta.sh is a command-line tool that allows you to easily manage multiple Node.j
 To install Volta.sh on Unix-based systems, you can use the following command:
 
 ```bash
+
 curl https://get.volta.sh | bash
 ```
 or [Bash](https://www.gnu.org/software/bash/) , [zsh](https://zsh.org), and fish, this installer will automatically update your console startup script. If you wish to prevent modifications to your console startup script, see Skipping Volta Setup on the [Volta Website](https://volta.sh). To manually configure your shell to use Volta, edit your console startup scripts to:
