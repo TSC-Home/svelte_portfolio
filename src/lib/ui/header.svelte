@@ -117,7 +117,7 @@
 							{formatTime(Math.min(elapsed, data.spotify.time.duration))}
 						</p>
 					{:else}
-						Curently not listening to music
+						Currently not listening to music
 					{/if}
 				</p>
 			</div>
