@@ -29,7 +29,7 @@ Idee by [Twyggy](https://github.com/twyggy) and his python solution [here](https
 
 ## Introduction
 
-In this Blog post, we will create a simple mRNA Translator using SvelteKit and TypeScript. The app will allow users to input a DNA sequence and translate it into mRNA. I will explain the process step by step, and provide code snippets to help you get started.
+In this Blog post, we will create a simple mRNA Translator using SvelteKit and TypeScript. The app will allow users to input a mRNA sequence and translate it into amino acids. I will explain the process step by step, and provide code snippets to help you get started.
 
 ## Step 1: Setup SvelteKit with TypeScript and Tailwind CSS
 
@@ -52,8 +52,10 @@ You can use the arrow keys to move between the options, and `space` to select th
 
 `pnpm i tailwindcss@latest`
 
-## Step 2: Understanding DNA
-DNA, or deoxyribonucleic acid, is a molecule that carries the genetic instructions for the growth, development, functioning, and reproduction of all known living organisms and many viruses. It is composed of four nucleotide bases: adenine (A), guanine (G), cytosine (C), and thymine (T). These bases are paired together in a specific sequence, with A pairing with T and C pairing with G. The sequence of these bases is what makes up a DNA molecule.
+## Step 2: Understanding amino acids
+Amino acids are the building blocks of proteins, which are essential for the structure and function of living organisms. They are composed of three nucleotide bases: adenine (A), guanine (G), cytosine (C), and thymine (T). These bases are paired together in a specific sequence, with A pairing with T and C pairing with G. The sequence of these bases is what makes up an amino acid.
+
+
 
 ## Step 3: Understanding mRNA
 mRNA, or messenger RNA, is a molecule that carries the genetic instructions for the growth, development, functioning, and reproduction of all known living organisms and many viruses. It is composed of four nucleotide bases: adenine (A), guanine (G), cytosine (C), and uracil (U). These bases are paired together in a specific sequence, with A pairing with U and C pairing with G. The sequence of these bases is what makes up an mRNA molecule.
