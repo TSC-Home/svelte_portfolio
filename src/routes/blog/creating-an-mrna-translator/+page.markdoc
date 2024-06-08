@@ -29,7 +29,9 @@ Idee by [Twyggy](https://github.com/twyggy) and his python solution [here](https
 
 ## Introduction
 
-In this Blog post, we will create a simple mRNA Translator using SvelteKit and TypeScript. The app will allow users to input a mRNA sequence and translate it into amino acids. I will explain the process step by step, and provide code snippets to help you get started.
+In this Blog post, we will create a simple mRNA Translator based on the aminoacids table using SvelteKit and TypeScript. The app will allow users to input a mRNA sequence and translate it into amino acids. I will explain the process step by step, and provide code snippets to help you get started.
+
+![aminoacids Table](https://upload.wikimedia.org/wikipedia/commons/7/70/Aminoacids_table.svg)
 
 ## Step 1: Setup SvelteKit with TypeScript and Tailwind CSS
 
@@ -53,23 +55,24 @@ You can use the arrow keys to move between the options, and `space` to select th
 `pnpm i tailwindcss@latest`
 
 ## Step 2: Understanding amino acids
-Amino acids are the building blocks of proteins, which are essential for the structure and function of living organisms. They are composed of three nucleotide bases: adenine (A), guanine (G), cytosine (C), and thymine (T). These bases are paired together in a specific sequence, with A pairing with T and C pairing with G. The sequence of these bases is what makes up an amino acid.
-
+Amino acids are the building blocks of proteins, which are essential for the structure and function of living organisms. They are simple compounds made of an amino group, a carboxyl group, and a unique side chain. These compounds join together to form proteins that perform many vital roles in the body.
 
 
 ## Step 3: Understanding mRNA
-mRNA, or messenger RNA, is a molecule that carries the genetic instructions for the growth, development, functioning, and reproduction of all known living organisms and many viruses. It is composed of four nucleotide bases: adenine (A), guanine (G), cytosine (C), and uracil (U). These bases are paired together in a specific sequence, with A pairing with U and C pairing with G. The sequence of these bases is what makes up an mRNA molecule.
+mRNA, or messenger RNA, serves as a crucial macromolecule that transports genetic instructions essential for the growth, development, functioning, and reproduction of all known living organisms and many viruses. Comprising four nucleotide bases—adenine (A), guanine (G), cytosine (C), and uracil (U)—mRNA forms through specific base pairings: adenine pairs with uracil, while cytosine pairs with guanine.
 
 ## Step 4: Understanding the mRNA Translation Process
 The mRNA Translation process is a complex process that involves several steps. The process involves the following steps:
 
-1. **Initiation**: The mRNA molecule is recognized by the ribosome, which is a complex structure made up of RNA and proteins. The ribosome binds to the mRNA molecule and begins the translation process.
+1 **Initiation**: The mRNA molecule is recognized by the ribosome, a complex structure consisting of RNA and proteins. In the ribosome, tRNA binds with the anticodon to the complementary codon on the mRNA and releases the bound amino acid, which binds to the downstream amino acid.
 
-2. **Elongation**: The ribosome moves along the mRNA molecule, reading the nucleotide sequence and adding the corresponding amino acid to the growing polypeptide chain. This process continues until the ribosome reaches the end of the mRNA molecule.
+2 **Extension:** The ribosome moves along the mRNA molecule and reads the nucleotide sequence into codons. Transfer RNA (tRNA) molecules bring the corresponding amino acids to the ribosome, with each tRNA molecule having a specific anticodon that matches the codon on the mRNA. The amino acids are added to the growing polypeptide chain.
 
-3. **Termination**: The ribosome releases the newly synthesized polypeptide chain, which is then folded into a protein. This process is known as termination.
+3 **Termination:** Once the ribosome reaches a stop codon on the mRNA, a release factor binds to the ribosome, resulting in the release of the newly synthesized polypeptide chain. This chain is then folded into a functional protein. This process is called termination.
 
-4. **Post-Translational Modifications**: The newly synthesized protein may undergo various post-translational modifications, such as phosphorylation, acetylation, and ubiquitination, to regulate its function and stability.
+Translated with DeepL.com (free version)
+
+
 
 ## Step 5: Implementing the mRNA Translator
 ### Define Amino Acid Mapping
@@ -258,9 +261,9 @@ Create a display area to show the translated amino acid sequence:
 ```
 
 ## Step 7: Testing and Deploying the App
-For Testing you can download the [sample .txt file](https://github.com/Twyggy/code-for-molecular-genetics/blob/main/mRNA%20sequenz.txt) and use it to test the app.
+- For Testing you can download the [sample .txt file](https://github.com/Twyggy/code-for-molecular-genetics/blob/main/mRNA%20sequenz.txt) and use it to test the app.
 
-For Deploying the app you can use [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/) to deploy the app to the web.
+- For Deploying the app you can use [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/) to deploy the app to the web.
 
 ## Conclusion
 I hope you found this guide helpful in creating your own mRNA translator using SvelteKit and TypeScript. With this guide, you can now create a simple mRNA translator that can translate DNA sequences into amino acid sequences. I encourage you to continue exploring SvelteKit and TypeScript to create more advanced applications and learn more about the SvelteKit framework.🦕
