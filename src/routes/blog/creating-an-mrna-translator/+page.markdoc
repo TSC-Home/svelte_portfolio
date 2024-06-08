@@ -29,7 +29,7 @@ Idee by [Twyggy](https://github.com/twyggy) and his python solution [here](https
 
 ## Introduction
 
-In this Blog post, we will be creating a simple mRNA Translator using SvelteKit and TypeScript. The app will allow users to input a DNA sequence and translate it into mRNA. I will explain the process step by step, and provide code snippets to help you get started.
+In this Blog post, we will create a simple mRNA Translator using SvelteKit and TypeScript. The app will allow users to input a DNA sequence and translate it into mRNA. I will explain the process step by step, and provide code snippets to help you get started.
 
 ## Step 1: Setup SvelteKit with TypeScript and Tailwind CSS
 
