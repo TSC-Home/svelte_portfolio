@@ -22,7 +22,7 @@ Idee by [Twyggy](https://github.com/twyggy) and his python solution [here](https
 ### Requirements if you want to run the app locally
 
 - [Node.js](https://nodejs.org/en/) 
-  - [You dont now how to install node.js. Click here!](/blog/nodejs-with-volta-sh)
+  - [You dont know how to install node.js. Click here!](/blog/nodejs-with-volta-sh)
 - [SvelteKit](https://kit.svelte.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
