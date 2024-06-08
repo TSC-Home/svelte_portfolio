@@ -1,0 +1,265 @@
+---
+title: Creating an mRNA Translator
+subtitle: Creating an mRNA Translator Using SvelteKit and TypeScript
+description: A guide on how to create an mRNA Translator using SvelteKit and TypeScript
+published: '2024-05-29'
+tags :
+  - sveltekit
+  - typescript
+  - mrna
+contributors: 
+  - tsc-home
+  - twyggy
+icon: biotech
+externallink: /projects/mrna-translator
+draft: false
+---
+
+Idee by [Twyggy](https://github.com/twyggy) and his python solution [here](https://github.com/Twyggy/code-for-molecular-genetics)
+
+## [Live Demo](https://lab.bytebridge.tech)
+
+### Requirements if you want to run the app locally
+
+- [Node.js](https://nodejs.org/en/) 
+  - [You dont now how to install node.js. Click here!](/blog/nodejs-with-volta-sh)
+- [SvelteKit](https://kit.svelte.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## Introduction
+
+In this Blog post, we will be creating a simple mRNA Translator using SvelteKit and TypeScript. The app will allow users to input a DNA sequence and translate it into mRNA. I will explain the process step by step, and provide code snippets to help you get started.
+
+## Step 1: Setup SvelteKit with TypeScript and Tailwind CSS
+
+To get started, we need to install SvelteKit and TypeScript. You can do this by running the following command in your terminal:
+
+Install SvelteKit (empty folder)
+
+`pnpm create svelte@latest`
+
+Select:
+- Skeleton project
+- Everything on "yes" except playwright and vitest
+
+Add TailwindCSS
+
+`npx svelte-add@latest`
+Select:
+- TailwindCSS
+You can use the arrow keys to move between the options, and `space` to select the option you want, hit `enter` to confirm.
+
+`pnpm i tailwindcss@latest`
+
+## Step 2: Understanding DNA
+DNA, or deoxyribonucleic acid, is a molecule that carries the genetic instructions for the growth, development, functioning, and reproduction of all known living organisms and many viruses. It is composed of four nucleotide bases: adenine (A), guanine (G), cytosine (C), and thymine (T). These bases are paired together in a specific sequence, with A pairing with T and C pairing with G. The sequence of these bases is what makes up a DNA molecule.
+
+## Step 3: Understanding mRNA
+mRNA, or messenger RNA, is a molecule that carries the genetic instructions for the growth, development, functioning, and reproduction of all known living organisms and many viruses. It is composed of four nucleotide bases: adenine (A), guanine (G), cytosine (C), and uracil (U). These bases are paired together in a specific sequence, with A pairing with U and C pairing with G. The sequence of these bases is what makes up an mRNA molecule.
+
+## Step 4: Understanding the mRNA Translation Process
+The mRNA Translation process is a complex process that involves several steps. The process involves the following steps:
+
+1. **Initiation**: The mRNA molecule is recognized by the ribosome, which is a complex structure made up of RNA and proteins. The ribosome binds to the mRNA molecule and begins the translation process.
+
+2. **Elongation**: The ribosome moves along the mRNA molecule, reading the nucleotide sequence and adding the corresponding amino acid to the growing polypeptide chain. This process continues until the ribosome reaches the end of the mRNA molecule.
+
+3. **Termination**: The ribosome releases the newly synthesized polypeptide chain, which is then folded into a protein. This process is known as termination.
+
+4. **Post-Translational Modifications**: The newly synthesized protein may undergo various post-translational modifications, such as phosphorylation, acetylation, and ubiquitination, to regulate its function and stability.
+
+## Step 5: Implementing the mRNA Translator
+### Define Amino Acid Mapping
+First, we need to define the amino acid mapping. This object maps each codon to its corresponding amino acid or function.
+
+```typescript
+const AS: { [key: string]: string | string[] } = {
+    UUU: 'Phe', UUC: 'Phe', UUA: 'Leu', UUG: 'Leu', CUU: 'Leu', CUC: 'Leu',
+    CUA: 'Leu', CUG: 'Leu', AUU: 'Ile', AUC: 'Ile', AUA: 'Ile', AUG: ['Met', 'start'],
+    GUU: 'Val', GUC: 'Val', GUA: 'Val', GUG: 'Val', UCU: 'Ser', UCC: 'Ser',
+    UCA: 'Ser', UCG: 'Ser', CCU: 'Pro', CCC: 'Pro', CCA: 'Pro', CCG: 'Pro',
+    ACU: 'Thr', ACC: 'Thr', ACA: 'Thr', ACG: 'Thr', GCU: 'Ala', GCC: 'Ala',
+    GCA: 'Ala', GCG: 'Ala', UAU: 'Tyr', UAC: 'Tyr', UAA: 'stopp', UAG: 'stopp',
+    CAU: 'His', CAC: 'His', CAA: 'Gln', CAG: 'Gln', AAU: 'Asn', AAC: 'Asn',
+    AAA: 'Lys', AAG: 'Lys', GAU: 'Asp', GAC: 'Asp', GAA: 'Glu', GAG: 'Glu',
+    UGU: 'Cys', UGC: 'Cys', UGA: 'stopp', UGG: 'Trp', CGU: 'Arg', CGC: 'Arg',
+    CGA: 'Arg', CGG: 'Arg', AGU: 'Ser', AGC: 'Ser', AGA: 'Arg', AGG: 'Arg',
+    GGU: 'Gly', GGC: 'Gly', GGA: 'Gly', GGG: 'Gly'
+};
+```
+
+### Handle Input and Translation
+We need to define the mRNA variable to store the input sequence, and the translate function to process the sequence:
+
+```typescript
+// Variable to store the mRNA sequence input
+let mRNA: string = '';
+
+// Array to store the translated output
+let output: string[] = [];
+
+// Variable to store the combined result for display
+let result_combined: any = '';
+
+// Function to translate mRNA sequence into amino acids
+function translate(): void {
+    // Split the mRNA sequence into codons (groups of three bases)
+    const splited = mRNA.match(/\w{3}|\w+$/g) || [];
+    const tempOutput: string[] = [];
+    let last_stopp_index = 0;
+    let last_start_index = 0;
+
+    // Function to translate a codon into its corresponding amino acid
+    function translator(words: string): string | string[] {
+        if (AS[words]) {
+            return AS[words];
+        } else {
+            return 'Not found';
+        }
+    }
+
+    splited.forEach((word, i) => {
+        const objected = translator(word);
+        let stringified = Array.isArray(objected) ? objected[0] : objected;
+
+        // Check for the last occurrence of 'stopp' and 'start'
+        if (tempOutput.includes('stopp')) {
+            last_stopp_index = tempOutput.length - tempOutput.reverse().indexOf('stopp');
+            tempOutput.reverse();
+        }
+
+        if (tempOutput.includes('start')) {
+            last_start_index = tempOutput.length - tempOutput.reverse().indexOf('start');
+            tempOutput.reverse();
+        }
+
+        // Handle special case for 'AUG' (start codon)
+        if (word === 'AUG') {
+            if (last_start_index <= last_stopp_index) {
+                stringified = AS['AUG'][1] as string;
+            } else if (last_stopp_index > last_start_index) {
+                stringified = AS['AUG'][1] as string;
+            } else if (last_stopp_index < last_start_index) {
+                stringified = AS['AUG'][0] as string;
+            }
+        }
+
+        // Add the translated amino acid to the output if appropriate
+        if (last_start_index > last_stopp_index || word === 'AUG') {
+            tempOutput.push(stringified);
+            if (stringified === 'stopp') {
+                tempOutput.push(' ');
+            }
+        }
+    });
+
+    // Find indices of 'start' and 'stopp' codons
+    const start_indices = tempOutput
+        .map((x, i) => (x === 'start' ? i : -1))
+        .filter((i) => i !== -1);
+    const stop_indices = tempOutput.map((x, i) => (x === 'stopp' ? i : -1)).filter((i) => i !== -1);
+
+    // Combine the sequences between 'start' and 'stopp' codons
+    const result: string[][] = [];
+
+    start_indices.forEach((start, index) => {
+        const stop = stop_indices[index];
+        if (start < stop) {
+            result.push(tempOutput.slice(start + 1, stop));
+        }
+    });
+
+    console.log(result);
+    result_combined = result.map((sublist) => sublist.join(' - '));
+    console.log(result_combined);
+}
+```
+
+### Handle File Upload
+We also need a function to handle file uploads and read the mRNA sequence from a file:
+
+```typescript
+// Function to handle file upload and read mRNA sequence
+function handleFileUpload(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    if (target.files && target.files.length > 0) {
+        const file = target.files[0];
+        const reader = new FileReader();
+        reader.onload = function (e: ProgressEvent<FileReader>) {
+            if (e.target) {
+                mRNA = e.target.result as string;
+                translate();
+            }
+        };
+        reader.readAsText(file);
+    }
+}
+```
+
+## Step 6: Building the User Interface
+### Input Area
+Create an input area for the user to enter the mRNA sequence or upload a file:
+
+```html
+<div class="flex min-h-screen flex-col items-center justify-center bg-gray-100">
+    <!-- Title of the application -->
+    <h1 class="mb-8 text-4xl font-bold">mRNA Translator</h1>
+    <div class="w-96">
+        <!-- Textarea for mRNA sequence input -->
+        <textarea
+            class="mb-4 w-full rounded border border-gray-300 p-4"
+            bind:value={mRNA}
+            placeholder="Enter mRNA sequence here..."
+        ></textarea>
+        <!-- Link to download a sample .txt file -->
+        <a
+            href="https://github.com/Twyggy/code-for-molecular-genetics/blob/main/mRNA%20sequenz.txt"
+            class="mb-4 flex w-full rounded border border-gray-300 p-4 hover:border-blue-500 active:bg-blue-600/30"
+        >
+            Click to download a sample .txt file.
+        </a>
+        <!-- Button to trigger translation -->
+        <button
+            class="mb-4 w-full rounded bg-blue-500 py-2 text-white hover:bg-blue-600"
+            on:click={translate}>Translate</button>
+        <!-- File upload input -->
+        <label for="file-upload" class="mb-4 flex w-full rounded border border-gray-300 p-4">
+            <p>Or click to upload a .txt file</p>
+            <input
+                id="file-upload"
+                class="hidden"
+                type="file"
+                accept=".txt"
+                on:change={handleFileUpload}
+            />
+        </label>
+    </div>
+</div>
+```
+
+### Display Area
+Create a display area to show the translated amino acid sequence:
+
+```html
+<!-- Area to display the translated amino acid sequence -->
+<div class="rounded border border-gray-300 bg-white p-4">
+    <h2 class="mb-2 text-xl font-bold">Amino Acid Sequence:</h2>
+    <p>
+        <!-- Loop through the combined result to display each sequence -->
+        {#each result_combined as result}
+            {result}
+            <br />
+        {/each}
+    </p>
+</div>
+```
+
+## Step 7: Testing and Deploying the App
+For Testing you can download the [sample .txt file](https://github.com/Twyggy/code-for-molecular-genetics/blob/main/mRNA%20sequenz.txt) and use it to test the app.
+
+For Deploying the app you can use [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/) to deploy the app to the web.
+
+## Conclusion
+I hope you found this guide helpful in creating your own mRNA translator using SvelteKit and TypeScript. With this guide, you can now create a simple mRNA translator that can translate DNA sequences into amino acid sequences. I encourage you to continue exploring SvelteKit and TypeScript to create more advanced applications and learn more about the SvelteKit framework.🦕
+

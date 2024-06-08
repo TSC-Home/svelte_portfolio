@@ -1,0 +1,49 @@
+---
+title: mRNA Translator
+subtitle: A simple mRNA translator that can translate DNA sequences into amino acid sequences.
+description: A simple mRNA translator that can translate DNA sequences into amino acid sequences using SvelteKit, TypeScript, and Tailwind CSS.
+published: '2024-05-29' 
+tags :
+  - sveltekit
+  - typescript
+  - tailwindcss
+  - mrna
+contributors: 
+  - tsc-home
+  - twyggy
+icon: biotech
+externallink: /projects/creating-an-mrna-translator
+draft: false
+---
+
+Idee by [Twyggy](https://github.com/twyggy) and his python solution [here](https://github.com/Twyggy/code-for-molecular-genetics)
+
+## [Live Demo](https://lab.bytebridge.tech)
+
+## [Blog Post](/blog/creating-an-mrna-translator)
+
+# My Little Project of mRNA Translator
+I hope you enjoy this little project of mRNA translator. It is a simple mRNA translator that can translate DNA sequences into amino acid sequences using SvelteKit, TypeScript, and Tailwind CSS.
+If you want to look at the code, you can find it [here](https://github.com/TSC-Home/svelte_genetiks).
+
+## How to use it
+You can use the mRNA translator by entering the DNA sequence in the input field and clicking the "Translate" button. The app will then translate the DNA sequence into an amino acid sequence and display it in the output field or you upload a .txt file with the DNA sequence.
+
+## How it works
+I created a blog post about how I implemented the mRNA translator. You can find it [here](/blog/creating-an-mrna-translator).
+
+## How to contribute
+If you want to contribute to this project, you can fork the repository and make a pull request. You can also create an issue if you have any suggestions or bugs to report.
+
+
+
+## Contact
+If you have any questions or comments, you can contact me at [hello@synthetix.me](mailto:hello@synthetix.me).
+
+## Acknowledgements
+I would like to thank [Twyggy](https://github.com/twyggy) for his python solution [here](https://github.com/Twyggy/code-for-molecular-genetics).
+
+## References
+- [SvelteKit](https://kit.svelte.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
