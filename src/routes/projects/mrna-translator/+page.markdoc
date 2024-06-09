@@ -1,7 +1,7 @@
 ---
 title: mRNA Translator
 subtitle: A simple mRNA translator that can translate DNA sequences into amino acid sequences.
-description: A simple mRNA translator that can translate DNA sequences into amino acid sequences using SvelteKit, TypeScript, and Tailwind CSS.
+description: A simple mRNA translator that can translate mRNA sequences into amino acid sequences using SvelteKit, TypeScript, and Tailwind CSS.
 published: '2024-05-29' 
 tags :
   - sveltekit
@@ -27,7 +27,7 @@ I hope you enjoy this little project of mRNA translator. It is a simple mRNA tra
 If you want to look at the code, you can find it [here](https://github.com/TSC-Home/svelte_genetiks).
 
 ## How to use it
-You can use the mRNA translator by entering the DNA sequence in the input field and clicking the "Translate" button. The app will then translate the DNA sequence into an amino acid sequence and display it in the output field or you upload a .txt file with the DNA sequence.
+You can use the mRNA translator by entering the mRNA sequence in the input field and clicking the "Translate" button. The app will then translate the mRNA sequence into an amino acid sequence and display it in the output field or you upload a .txt file with the mRNA sequence.
 
 ## How it works
 I created a blog post about how I implemented the mRNA translator. You can find it [here](/blog/creating-an-mrna-translator).
