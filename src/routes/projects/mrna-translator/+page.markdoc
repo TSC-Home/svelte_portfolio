@@ -23,7 +23,7 @@ Idee by [Twyggy](https://github.com/twyggy) and his python solution [here](https
 ## [Blog Post](/blog/creating-an-mrna-translator)
 
 # My Little Project of mRNA Translator
-I hope you enjoy this little project of mRNA translator. It is a simple mRNA translator that can translate DNA sequences into amino acid sequences using SvelteKit, TypeScript, and Tailwind CSS.
+I hope you enjoy this little project of mRNA translator. It is a simple mRNA translator that can translate mRNA sequences into amino acid sequences using SvelteKit, TypeScript, and Tailwind CSS.
 If you want to look at the code, you can find it [here](https://github.com/TSC-Home/svelte_genetiks).
 
 ## How to use it
