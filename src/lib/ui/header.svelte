@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { invalidateAll } from '$app/navigation';
+	import { goto, invalidateAll } from '$app/navigation';
 	import { page } from '$app/stores';
 
 	export let data;
@@ -73,7 +73,15 @@
 			</a>
 		{:else}
 			<button
-				on:click={() => history.back()}
+				on:click={() => {
+					if ($page.url.pathname.includes('blog')) {
+						goto('/blog');
+					} else if ($page.url.pathname.includes('projects')) {
+						goto('/projects');
+					} else {
+						goto('/');
+					}
+				}}
 				class=" animate-fadeIn animate-delay-[1000ms] flex items-center justify-center md:hidden"
 			>
 				<p

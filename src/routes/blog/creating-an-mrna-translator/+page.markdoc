@@ -39,7 +39,10 @@ To get started, we need to install SvelteKit and TypeScript. You can do this by 
 
 Install SvelteKit (empty folder)
 
-`pnpm create svelte@latest`
+```bash
+
+pnpm create svelte@latest
+```
 
 Select:
 - Skeleton project
@@ -47,12 +50,19 @@ Select:
 
 Add TailwindCSS
 
-`npx svelte-add@latest`
+```bash
+
+npx svelte-add@latest
+```
+
 Select:
 - TailwindCSS
 You can use the arrow keys to move between the options, and `space` to select the option you want, hit `enter` to confirm.
 
-`pnpm i tailwindcss@latest`
+```bash
+
+pnpm i tailwindcss@latest
+```
 
 ## Step 2: Understanding amino acids
 Amino acids are the building blocks of proteins, which are essential for the structure and function of living organisms. They are simple compounds made of an amino group, a carboxyl group, and a unique side chain. These compounds join together to form proteins that perform many vital roles in the body.
@@ -70,7 +80,6 @@ The mRNA Translation process is a complex process that involves several steps. T
 
 3 **Termination:** Once the ribosome reaches a stop codon on the mRNA, a release factor binds to the ribosome, resulting in the release of the newly synthesized polypeptide chain. This chain is then folded into a functional protein. This process is called termination.
 
-Translated with DeepL.com (free version)
 
 
 
