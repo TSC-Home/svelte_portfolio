@@ -14,7 +14,7 @@
 		>
 			RSS Feed
 		</a>
-		<a class="text-xs underline-offset-4 hover:underline" href="mailto:hello@synthetic.me">
+		<a class="text-xs underline-offset-4 hover:underline" href="mailto:hello@synthetix.me">
 			Contact
 		</a>
 	</nav>
